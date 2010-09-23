@@ -1,3 +1,5 @@
+//  #g100pon test
+//
 // A reference page
 //   Excell and Groovy SQL
 //    http://forums.pragprog.com/forums/55/topics/1302
@@ -33,7 +35,7 @@ sql.eachRow(sql_str) {
 /*
 sql_str = "DROP TABLE \"sample1.Sheet1\" IF EXISTS;"
 sql_str = "CREATE TABLE \"sample1.Sheet1\" (shop varchar,month1 varchar,month2 varchar,month3 varchar,sum varchar);"
-sql_str = "INSERT INTO \"sample1.Sheet1\" VALUES ('ìåêºìX','345','112','765');"
+sql_str = "INSERT INTO \"sample1.Sheet1\" VALUES ('Êù±Ë•øÂ∫ó','345','112','765');"
 sql_str = "select count(*) from \"sample1.Sheet1\" "
 */
 
