@@ -55,11 +55,19 @@ class steeltest_page1{
 				boxLayout()
 				digitalRadialGauge (preferredSize: [300,300])
 				digitalRadialLcdGauge (id:'lcdgauge',minValue:0,maxValue:100,lcdValue:50,
+						titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
+						useTitleAndUnitFont:true,																		//Font Change(to Verdana)
 						title:'ほげほげ',
 						unitString:'ふがふが',
 						lcdUnitString:'まいう',
 						preferredSize: [300,300])
-				//displayCircular(id:'circular',minValue:0,maxValue:100,lcdValue:50,title:'ほげほげ',unitString:'ふがふが',lcdUnitString:'まいう',preferredSize: [300,300])
+/*
+				displayCircular(id:'circular',minValue:0,maxValue:100,lcdValue:50,
+					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
+					useTitleAndUnitFont:true,																		//Font Change(to Verdana)
+					title:'ほげほげ',unitString:'ふがふが',lcdUnitString:'まいう',
+					preferredSize: [300,300])
+*/
 				displayCircular(id:'circular',value:0,lcdDecimals:3,unitString:'SEC',
 						lcdColor:LcdColor.ORANGE_LCD,
 						backgroundColor:BackgroundColor.GREEN,
