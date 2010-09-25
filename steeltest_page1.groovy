@@ -32,8 +32,8 @@ class steeltest_page1{
 
 				altimeter(preferredSize: [300,300])
 				clock(id:'clock',preferredSize: [300,300],
-							backgroundColor:BackgroundColor.WHITE,
-							frameDesign:FrameDesign.SHINY_METAL)
+						backgroundColor:BackgroundColor.WHITE,
+						frameDesign:FrameDesign.SHINY_METAL)
 				//g = clock.backgroundImage.getGraphics()
 				g = clock.foregroundImage.createGraphics()
 				icon = swingBuilder.imageIcon('/griffon-icon-48x48.png').image
@@ -45,22 +45,27 @@ class steeltest_page1{
 				compass.setValueAnimated 90
 
 				clock.CLOCK_TIMER.addActionListener([
-						actionPerformed: { source -> 
-								println "clock == ${clock.hour}:${clock.minute} <${java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)}:${clock.minute}>"
-						}
+					actionPerformed: { source -> 
+						println "clock == ${clock.hour}:${clock.minute} <${java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)}:${clock.minute}>"
+					}
 				] as ActionListener)
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
-				digitalRadialGauge (preferredSize: [300,300])
-				digitalRadialLcdGauge (id:'lcdgauge',minValue:0,maxValue:100,lcdValue:50,
-						titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
-						useTitleAndUnitFont:true,										//Font Change(to Verdana)
-						title:'ほげほげ',
-						unitString:'ふがふが',
-						lcdUnitString:'まいう',
-						preferredSize: [300,300])
+				digitalRadialGauge (preferredSize: [300,300],value:50,
+					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
+					useTitleAndUnitFont:true,										//Font Change(to Verdana)
+					unitString:'秒'
+				)
+				digitalRadialLcdGauge (id:'lcdgauge',minValue:0,maxValue:100,lcdValue:50,value:80,
+					valueColor:Color.RED,
+					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
+					useTitleAndUnitFont:true,										//Font Change(to Verdana)
+					title:'ほげほげ',
+					unitString:'ふがふが',
+					lcdUnitString:'まいう',
+					preferredSize: [300,300])
 /*
 				displayCircular(id:'circular',minValue:0,maxValue:100,lcdValue:50,
 					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),			//Font Change(to Verdana)
@@ -68,7 +73,10 @@ class steeltest_page1{
 					title:'ほげほげ',unitString:'ふがふが',lcdUnitString:'まいう',
 					preferredSize: [300,300])
 */
-				displayCircular(id:'circular',value:0,lcdDecimals:3,unitString:'SEC',
+				displayCircular(id:'circular',value:15,lcdDecimals:3,
+						customLcdUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),			//Font Change(to Verdana)
+						useCustomLcdUnitFont:true,											//Font Change(to Verdana)
+						lcdUnitString :'秒',
 						lcdColor:LcdColor.ORANGE_LCD,
 						backgroundColor:BackgroundColor.GREEN,
 						frameDesign:FrameDesign.BLACK_METAL,
@@ -76,7 +84,8 @@ class steeltest_page1{
 						preferredSize: [300,300])
 				circular.setValueAnimated 100
 /*
-				displayCircular(id:'circular2',value:bind{model.count},lcdDecimals:0,unitString:'SEC',
+				displayCircular(id:'circular2',value:bind{model.count},lcdDecimals:0,
+						unitString:'SEC',
 						lcdColor:LcdColor.BLUEBLUE_LCD,
 						backgroundColor:BackgroundColor.RED,
 						frameDesign:FrameDesign.BLACK_METAL,
@@ -85,11 +94,24 @@ class steeltest_page1{
 */
 			}
 
-			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0),preferredSize: [420,60]){
+			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0),preferredSize: [420,80]){
 				boxLayout()
-				displayMulti(preferredSize: [140,40])
-				displayRectangular(preferredSize: [140,60],minimumSize: [140,60]) 
-				displaySingle(preferredSize: [140,40]) 
+				displayMulti(preferredSize: [140,40],value:30,
+					customLcdUnitFont :new Font("ＭＳ ゴシック",Font.PLAIN,20),			//Font Change(to Verdana)
+					useCustomLcdUnitFont :true,											//Font Change(to Verdana)
+					unitString:'秒'
+				)
+				displayRectangular(preferredSize: [140,80],minimumSize: [140,80],value:50,
+					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),	//Font Change(to Verdana)
+					useTitleAndUnitFont:true,									//Font Change(to Verdana)
+					lcdUnitString:'sec'
+					//lcdUnitString:'秒'
+				) 
+				displaySingle(preferredSize: [140,40],value:70,
+					customLcdUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),			//Font Change(to Verdana)
+					useCustomLcdUnitFont:true,											//Font Change(to Verdana)
+					unitString:'秒'
+				) 
 			}
 
 		}

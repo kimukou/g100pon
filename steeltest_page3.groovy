@@ -27,21 +27,27 @@ class steeltest_page3{
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
 				radial2LcdGauge(preferredSize: [300,300],
+					unitString:'SEC',
 					customBackground:java.awt.Color.MAGENTA,
 					backgroundColorFromTheme:false //★ NEED!!
 				) 
 
-				radial2TopGauge(preferredSize: [300,300],value:20)    //NEW★
+				radial2TopGauge(preferredSize: [300,300],value:20,
+					unitString:'SEC',
+					frameDesign:FrameDesign.BLACK_METAL
+				)    // since 0.2.1 NEW★
 
 				radial3Gauge(preferredSize: [300,300],
-						sectionsVisible :true,//★ NEED!!
-						sections:[[0, 33, java.awt.Color.GREEN],[33, 66, java.awt.Color.YELLOW],[66, 100, java.awt.Color.RED]] as Section[] 
+					unitString:'SEC',
+					sectionsVisible :true,//★ NEED!!
+					sections:[[0, 33, java.awt.Color.GREEN],[33, 66, java.awt.Color.YELLOW],[66, 100, java.awt.Color.RED]] as Section[] 
 				)
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
 				radial3LcdGauge(id:'radial3Lcd',
+					unitString:'SEC',
 					preferredSize: [300,300],
 					areaColor:java.awt.Color.CYAN,
 					areaStart:40,
@@ -57,8 +63,8 @@ class steeltest_page3{
 					tickmarkColor:java.awt.Color.RED,
 					tickmarkColorFromTheme:false,			//★ NEED!!
 					trackStartColor:java.awt.Color.LIGHT_GRAY,
-					trackSectionColor:java.awt.Color.PINK,
-					trackStopColor:java.awt.Color.MAGENTA
+					trackStopColor:java.awt.Color.MAGENTA,
+					trackSectionColor:java.awt.Color.PINK
 				) 
 
 				radial4LcdGauge(preferredSize: [300,300],
@@ -71,7 +77,7 @@ class steeltest_page3{
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
-				radialCounterGauge(id:'radialCounter', preferredSize: [300,300],value:7) //NEW★
+				radialCounterGauge(id:'radialCounter', preferredSize: [300,300],value:7) //since 0.2.1 NEW★
 			}
 
 		}
