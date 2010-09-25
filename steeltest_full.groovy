@@ -10,13 +10,13 @@ import javax.swing.WindowConstants as WC
 def swingBuilder = new SwingBuilder()
 swingBuilder.edt {
   frame(title:'steeltestFull', 
-				//size: [900,900],
- 				pack: true,
+			//size: [900,900],
+			pack: true,
   			location: [50,50],
   			resizable: true,
   			locationByPlatform:true,
-				show: true,
-				defaultCloseOperation:WC.EXIT_ON_CLOSE
+			show: true,
+			defaultCloseOperation:WC.EXIT_ON_CLOSE
 	) 
 	{
 		tabbedPane(){

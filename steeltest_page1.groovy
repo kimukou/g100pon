@@ -56,15 +56,15 @@ class steeltest_page1{
 				digitalRadialGauge (preferredSize: [300,300])
 				digitalRadialLcdGauge (id:'lcdgauge',minValue:0,maxValue:100,lcdValue:50,
 						titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
-						useTitleAndUnitFont:true,																		//Font Change(to Verdana)
+						useTitleAndUnitFont:true,										//Font Change(to Verdana)
 						title:'ほげほげ',
 						unitString:'ふがふが',
 						lcdUnitString:'まいう',
 						preferredSize: [300,300])
 /*
 				displayCircular(id:'circular',minValue:0,maxValue:100,lcdValue:50,
-					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
-					useTitleAndUnitFont:true,																		//Font Change(to Verdana)
+					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),			//Font Change(to Verdana)
+					useTitleAndUnitFont:true,											//Font Change(to Verdana)
 					title:'ほげほげ',unitString:'ふがふが',lcdUnitString:'まいう',
 					preferredSize: [300,300])
 */
@@ -85,7 +85,7 @@ class steeltest_page1{
 */
 			}
 
-			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
+			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0),preferredSize: [420,60]){
 				boxLayout()
 				displayMulti(preferredSize: [140,40])
 				displayRectangular(preferredSize: [140,60],minimumSize: [140,60]) 

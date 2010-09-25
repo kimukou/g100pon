@@ -28,14 +28,14 @@ class steeltest_page3{
 				boxLayout()
 				radial2LcdGauge(preferredSize: [300,300],
 					customBackground:java.awt.Color.MAGENTA,
-					,backgroundColorFromTheme:false //★ NEED!!
+					backgroundColorFromTheme:false //★ NEED!!
 				) 
 
 				radial2TopGauge(preferredSize: [300,300],value:20)    //NEW★
 
 				radial3Gauge(preferredSize: [300,300],
-							sectionsVisible :true,//★ NEED!!
-							sections:[[0, 33, java.awt.Color.GREEN],[33, 66, java.awt.Color.YELLOW],[66, 100, java.awt.Color.RED]] as Section[] 
+						sectionsVisible :true,//★ NEED!!
+						sections:[[0, 33, java.awt.Color.GREEN],[33, 66, java.awt.Color.YELLOW],[66, 100, java.awt.Color.RED]] as Section[] 
 				)
 			}
 

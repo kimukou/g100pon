@@ -38,22 +38,73 @@ class steeltest_page4{
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
-				radialBargraph1Gauge(preferredSize: [300,300]) 
-				radialBargraph1LcdGauge(preferredSize: [300,300])
-				radialBargraph2Gauge(preferredSize: [300,300],)
+				radialBargraph1Gauge(preferredSize: [300,300],
+					barGraphColor:ColorDef.RED,
+					value:50,
+					customBackground:java.awt.Color.MAGENTA,
+					backgroundColorFromTheme:false //★ NEED!!
+				) 
+				radialBargraph1LcdGauge(preferredSize: [300,300],
+					barGraphColor:ColorDef.ORANGE,
+					value:50
+				)
+				//■section color not action
+				radialBargraph2Gauge(preferredSize: [300,300],
+					barGraphColor:ColorDef.YELLOW,
+					value:50,
+					sectionsVisible :true,//★ NEED!!
+					sections:[[0, 33, java.awt.Color.GREEN],[33, 66, java.awt.Color.YELLOW],[66, 100, java.awt.Color.RED]] as Section[] 
+				)
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
-				radialBargraph2LcdGauge(preferredSize: [300,300]) 
-				radialBargraph3Gauge(preferredSize: [300,300]) 
-				radialBargraph3LcdGauge(preferredSize: [300,300]) 
+				//■aria color not action
+				radialBargraph2LcdGauge(preferredSize: [300,300],
+					barGraphColor:ColorDef.GREEN,
+					value:50,
+					areaColor:java.awt.Color.CYAN,
+					areaStart:40,
+					areaStop:70,		
+					areaVisible:true	//★ NEED!!
+				) 
+				radialBargraph3Gauge(preferredSize: [300,300],
+					barGraphColor:ColorDef.BLUE,
+					value:50,
+					title:'hogehoge',unitString:'fuga',
+					frameDesign:FrameDesign.BLACK_METAL,
+					backgroundColor:BackgroundColor.BEIGE,
+					tickmarkColor:java.awt.Color.RED,
+					tickmarkColorFromTheme:false,			//★ NEED!!
+					trackStartColor:java.awt.Color.LIGHT_GRAY,
+					trackSectionColor:java.awt.Color.PINK,
+					trackStopColor:java.awt.Color.MAGENTA
+				) 
+				radialBargraph3LcdGauge(preferredSize: [300,300],
+					barGraphColor:ColorDef.RAITH,
+					value:50,
+					ledColor:LedColor.YELLOW_LED,
+					pointerColor:PointerColor.WHITE,
+					labelColor:java.awt.Color.GREEN,
+					labelColorFromTheme:false				//★ NEED!!
+				) 
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
-				radialBargraph4Gauge(preferredSize: [300,300])
-				radialBargraph4LcdGauge(preferredSize: [300,300])
+				radialBargraph4Gauge(preferredSize: [300,300],
+					barGraphColor:ColorDef.GREEN_LCD,
+					value:50
+				)
+				radialBargraph4LcdGauge(preferredSize: [300,300],
+					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
+					useTitleAndUnitFont:true,										//Font Change(to Verdana)
+					title:'ほげほげ',
+					unitString:'ふがふが',
+					lcdUnitString:'まいう',
+					barGraphColor:ColorDef.JUG_GREEN,
+					value:50
+				)
 			}
 
 		}
