@@ -12,7 +12,19 @@ class steeltest_page4{
 		swingBuilder.panel(title:_title){
 			registerFactory("migLayout", new LayoutFactory(MigLayout))
 			migLayout(layoutConstraints: "gap 0,insets 0,fill")
+/*
 
+        radialBargraph1Gauge: RadialBargraph1,
+        radialBargraph1LcdGauge: RadialBargraph1Lcd,
+        radialBargraph2Gauge: RadialBargraph2,
+        radialBargraph2LcdGauge: RadialBargraph2Lcd,
+        radialBargraph3Gauge: RadialBargraph3,
+        radialBargraph3LcdGauge: RadialBargraph3Lcd,
+        radialBargraph4Gauge: RadialBargraph4,
+        radialBargraph4LcdGauge: RadialBargraph4Lcd,
+
+
+*/
 			registerBeanFactory("radialBargraph1Gauge", RadialBargraph1)
 			registerBeanFactory("radialBargraph1LcdGauge", RadialBargraph1Lcd)
 			registerBeanFactory("radialBargraph2Gauge", RadialBargraph2)
