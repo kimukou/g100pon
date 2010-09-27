@@ -24,6 +24,7 @@ swingBuilder.edt {
 			ReloadUtil.getClass('steeltest_page2.groovy').newInstance(swingBuilder,"page2")
 			ReloadUtil.getClass('steeltest_page3.groovy').newInstance(swingBuilder,"page3")
 			ReloadUtil.getClass('steeltest_page4.groovy').newInstance(swingBuilder,"page4<griffon plugin yet>")
+			ReloadUtil.getClass('steeltest_page5.groovy').newInstance(swingBuilder,"page5<griffon plugin yet>")
 		}
   }
 }

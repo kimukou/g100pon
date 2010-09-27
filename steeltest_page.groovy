@@ -22,6 +22,8 @@ class steeltest_page4{
         radialBargraph3LcdGauge: RadialBargraph3Lcd,
         radialBargraph4Gauge: RadialBargraph4,
         radialBargraph4LcdGauge: RadialBargraph4Lcd,
+
+
 */
 			registerBeanFactory("radialBargraph1Gauge", RadialBargraph1)
 			registerBeanFactory("radialBargraph1LcdGauge", RadialBargraph1Lcd)
