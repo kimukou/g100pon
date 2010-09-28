@@ -13,6 +13,18 @@ class steeltest_page2{
 			registerFactory("migLayout", new LayoutFactory(MigLayout))
 			migLayout(layoutConstraints: "gap 0,insets 0,fill")
 
+			Radar.metaClass.add = { Poi poi ->
+					delegate.addPoi(poi)
+			}
+			Radar.metaClass.leftShift = { Poi poi ->
+					delegate.addPoi(poi)
+			}
+/*
+			Poi.metaClass.setName = {String name ->
+					delegate.NAME = name
+			}
+			registerBeanFactory("poi", Poi)
+*/
 
 			registerBeanFactory("level", Level)
 			registerBeanFactory("linearGauge", Linear)
@@ -45,11 +57,32 @@ class steeltest_page2{
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
-				radar(id:'radar',preferredSize: [300,300])
-				//poi(name:'hogehoge',lat:30,lon:70)
-				//poi(id:'hogehoge',name:'hogehoge',lat:30,lon:70)
-				//radar.add(hogehoge)
-				radar.animate() 
+/*
+				poi(id:'RAITH',name:'Raith',lat:51.485605,lon:7.479544)
+				poi(id:'HOME',name:'Home',lat:51.911784,lon:7.633789)
+				poi(id:'MUENSTER',name:'Munster',lat:51.972502,lon:7.62989)
+				poi(id:'ESSEN',name:'Essen',lat:51.462721,lon:7.015057)
+				poi(id:'BOCHUM',name:'Bochum',lat:51.487526,lon:7.211781)
+				poi(id:'WUPPERTAL',name:'Wuppertal',lat:51.260783,lon:7.149982)
+*/
+				//not better
+				def RAITH = new Poi('Raith',51.485605,7.479544)
+				def HOME = new Poi('Home',51.911784,7.633789)
+				def MUENSTER = new Poi('Munster',51.972502,7.62989)
+				def ESSEN = new Poi('Essen',51.462721,7.015057)
+				def BOCHUM = new Poi('Bochum',51.487526,7.211781)
+				def WUPPERTAL = new Poi('Wuppertal',51.260783,7.149982)
+
+				radar(id:'radar',preferredSize: [300,300],
+							range:70000,
+							myLocation:RAITH
+				)
+				radar.add HOME
+				radar.add MUENSTER
+				radar.add ESSEN
+				radar.add BOCHUM
+				radar.add WUPPERTAL
+				radar.animate()
 
 				radial1Gauge(id:'radial1',preferredSize: [300,300],minValue:0,maxValue:10000,
 					scaleDividerPower:3
