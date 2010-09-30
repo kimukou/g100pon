@@ -15,10 +15,11 @@ class steeltest_page5{
 /*
         linearBargraphGauge: LinearBargraph ,
         linearBargraphLcdGauge: LinearBargraphLcd,
-
+        led: Led,
 */
 			registerBeanFactory("linearBargraphGauge", LinearBargraph)
 			registerBeanFactory("linearBargraphLcdGauge", LinearBargraphLcd)
+			registerBeanFactory("led", Led)
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
@@ -29,6 +30,7 @@ class steeltest_page5{
 					barGraphColor:ColorDef.MAGENTA,
 					orientation:javax.swing.SwingConstants.VERTICAL
 				)
+				led()
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){

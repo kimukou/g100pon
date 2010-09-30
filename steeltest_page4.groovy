@@ -14,40 +14,40 @@ class steeltest_page4{
 			migLayout(layoutConstraints: "gap 0,insets 0,fill")
 /*
 
-        radialBargraph1Gauge: RadialBargraph1,
-        radialBargraph1LcdGauge: RadialBargraph1Lcd,
-        radialBargraph2Gauge: RadialBargraph2,
-        radialBargraph2LcdGauge: RadialBargraph2Lcd,
-        radialBargraph3Gauge: RadialBargraph3,
-        radialBargraph3LcdGauge: RadialBargraph3Lcd,
-        radialBargraph4Gauge: RadialBargraph4,
-        radialBargraph4LcdGauge: RadialBargraph4Lcd,
+        radialBargraph1: RadialBargraph1,
+        radialBargraph1Lcd: RadialBargraph1Lcd,
+        radialBargraph2: RadialBargraph2,
+        radialBargraph2Lcd: RadialBargraph2Lcd,
+        radialBargraph3: RadialBargraph3,
+        radialBargraph3Lcd: RadialBargraph3Lcd,
+        radialBargraph4: RadialBargraph4,
+        radialBargraph4Lcd: RadialBargraph4Lcd,
 */
-			registerBeanFactory("radialBargraph1Gauge", RadialBargraph1)
-			registerBeanFactory("radialBargraph1LcdGauge", RadialBargraph1Lcd)
-			registerBeanFactory("radialBargraph2Gauge", RadialBargraph2)
+			registerBeanFactory("radialBargraph1", RadialBargraph1)
+			registerBeanFactory("radialBargraph1Lcd", RadialBargraph1Lcd)
+			registerBeanFactory("radialBargraph2", RadialBargraph2)
 
-			registerBeanFactory("radialBargraph2LcdGauge", RadialBargraph2Lcd)
-			registerBeanFactory("radialBargraph3Gauge", RadialBargraph3)
-			registerBeanFactory("radialBargraph3LcdGauge", RadialBargraph3Lcd)
+			registerBeanFactory("radialBargraph2Lcd", RadialBargraph2Lcd)
+			registerBeanFactory("radialBargraph3", RadialBargraph3)
+			registerBeanFactory("radialBargraph3Lcd", RadialBargraph3Lcd)
 
-			registerBeanFactory("radialBargraph4Gauge", RadialBargraph4)
-			registerBeanFactory("radialBargraph4LcdGauge", RadialBargraph4Lcd)
+			registerBeanFactory("radialBargraph4", RadialBargraph4)
+			registerBeanFactory("radialBargraph4Lcd", RadialBargraph4Lcd)
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
-				radialBargraph1Gauge(preferredSize: [300,300],
+				radialBargraph1(preferredSize: [300,300],
 					barGraphColor:ColorDef.RED,
 					value:50,
 					customBackground:java.awt.Color.MAGENTA,
 					backgroundColorFromTheme:false //★ NEED!!
 				) 
-				radialBargraph1LcdGauge(preferredSize: [300,300],
+				radialBargraph1Lcd(preferredSize: [300,300],
 					barGraphColor:ColorDef.ORANGE,
 					value:50
 				)
 				//■section color not action
-				radialBargraph2Gauge(preferredSize: [300,300],
+				radialBargraph2(preferredSize: [300,300],
 					barGraphColor:ColorDef.YELLOW,
 					value:50,
 					sectionsVisible :true,//★ NEED!!
@@ -58,7 +58,7 @@ class steeltest_page4{
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
 				//■aria color not action
-				radialBargraph2LcdGauge(preferredSize: [300,300],
+				radialBargraph2Lcd(preferredSize: [300,300],
 					barGraphColor:ColorDef.GREEN,
 					value:50,
 					areaColor:java.awt.Color.CYAN,
@@ -66,7 +66,7 @@ class steeltest_page4{
 					areaStop:70,		
 					areaVisible:true	//★ NEED!!
 				) 
-				radialBargraph3Gauge(preferredSize: [300,300],
+				radialBargraph3(preferredSize: [300,300],
 					barGraphColor:ColorDef.BLUE,
 					value:50,
 					title:'hogehoge',unitString:'fuga',
@@ -78,7 +78,7 @@ class steeltest_page4{
 					trackSectionColor:java.awt.Color.PINK,
 					trackStopColor:java.awt.Color.MAGENTA
 				) 
-				radialBargraph3LcdGauge(preferredSize: [300,300],
+				radialBargraph3Lcd(preferredSize: [300,300],
 					barGraphColor:ColorDef.RAITH,
 					value:50,
 					ledColor:LedColor.YELLOW_LED,
@@ -90,11 +90,11 @@ class steeltest_page4{
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
-				radialBargraph4Gauge(preferredSize: [300,300],
+				radialBargraph4(preferredSize: [300,300],
 					barGraphColor:ColorDef.GREEN_LCD,
 					value:50
 				)
-				radialBargraph4LcdGauge(preferredSize: [300,300],
+				radialBargraph4Lcd(preferredSize: [300,300],
 					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
 					useTitleAndUnitFont:true,										//Font Change(to Verdana)
 					title:'ほげほげ',
