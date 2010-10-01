@@ -5,7 +5,7 @@ JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
 R_HOME=/usr/share/R-2.4.1
 export R_HOME
 export PATH=$PATH:$R_HOME/bin
-export R_DOC_DIR=$R_HOME/doc
+#export R_DOC_DIR=$R_HOME/doc
 export R_INCLUDE_DIR=$R_HOME/include
 export R_SHARE_DIR=$R_HOME/share
 
