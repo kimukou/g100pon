@@ -1,4 +1,4 @@
-::  統計解析環境 R のインストールが必要です
+::  nessesary R install
 
 set JAVA_HOME=C:\opt\jdk
 ::set JAVA_OPTS=-Dgroovy.source.encoding=UTF-8 -Dfile.encoding=UTF-8
