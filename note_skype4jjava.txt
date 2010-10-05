@@ -1,0 +1,18 @@
+nessesary Skype or SkypeFramework
+	MacOSX 
+		sudo cp -r /Applications/Skype.app/Contents/Frameworks/* /Library/Frameworks
+
+
+release Page
+	http://skype.sourceforge.jp/
+	(The thing of Skype API (Skype4Java) is used because the binary seems to be old, and not to move with Mac. )
+
+Reference page
+	Skype API (Skype4Java)
+		http://www.hinatablog.org/?tag=skype
+
+	Introduction to Skype for Java programmer
+		http://itpro.nikkeibp.co.jp/article/COLUMN/20070625/275811/?ST=neteng
+
+	Skype API material
+		http://toremoro.tea-nifty.com/tomos_hotline/2005/12/skypeskype_api_83db.html

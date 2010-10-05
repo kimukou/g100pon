@@ -67,12 +67,68 @@ class steeltest_page3{
 					trackSectionColor:java.awt.Color.PINK
 				) 
 
+/*
 				radial4LcdGauge(preferredSize: [300,300],
 					ledColor:LedColor.YELLOW_LED,
 					pointerColor:PointerColor.WHITE,
 					labelColor:java.awt.Color.GREEN,
 					labelColorFromTheme:false				//★ NEED!!
 				) 
+*/
+
+        //20100105 STAINLESS TEST add start=>
+				radial4LcdGauge(
+					id:'radial4LcdGauge',
+					preferredSize: [300,300],
+					frameDesign:FrameDesign.BLACK_METAL,
+					backgroundColorFromTheme:false,
+					labelColorFromTheme:false,				//★ NEED!!
+					labelColor:java.awt.Color.BLACK,
+					tickmarkColorFromTheme:false,			//★ NEED!!
+					tickmarkColor:java.awt.Color.BLACK
+				) 
+				radial4LcdGauge.setCustomBackground(
+						[
+							false, 
+							radial4LcdGauge.getCenter(), 
+							-0.45f, 
+							[
+								0f,
+						    0.03f,
+						    0.10f,
+						    0.14f,
+						    0.24f,
+						    0.33f,
+						    0.38f,
+						    0.5f,
+						    0.62f,
+						    0.67f,
+						    0.76f,
+						    0.81f,
+						    0.85f,
+						    0.97f,
+						    1.0f 
+							] as float[], 
+							[
+								new java.awt.Color(0xFDFDFD),
+						    new java.awt.Color(0xFDFDFD),
+						    new java.awt.Color(0xB2B2B4),
+						    new java.awt.Color(0xACACAE),
+						    new java.awt.Color(0xFDFDFD),
+						    new java.awt.Color(0x6E6E70),
+						    new java.awt.Color(0x6E6E70),
+						    new java.awt.Color(0xFDFDFD),
+						    new java.awt.Color(0x6E6E70),
+						    new java.awt.Color(0x6E6E70),
+						    new java.awt.Color(0xFDFDFD),
+						    new java.awt.Color(0xACACAE),
+						    new java.awt.Color(0xB2B2B4),
+						    new java.awt.Color(0xFDFDFD),
+						    new java.awt.Color(0xFDFDFD) 
+							] as java.awt.Color[]
+					] as ConicalGradientPaint
+				)
+        //20100105 STAINLESS TEST add end<=
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
