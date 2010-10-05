@@ -5,6 +5,9 @@ import eu.hansolo.steelseries.tools.*
 import eu.hansolo.steelseries.gauges.*
 import java.awt.*
 import java.awt.event.*
+import java.awt.image.*
+import javax.imageio.ImageIO
+import java.awt.geom.*;
 
 class steeltest_page1{
 
@@ -31,22 +34,30 @@ class steeltest_page1{
 				label(text:'1  ')
 
 				altimeter(preferredSize: [300,300])
-				clock(id:'clock',preferredSize: [300,300],
+				clock(id:'clock',preferredSize: [200,200],
+						//pointerColor:PointerColor.WHITE,
 						backgroundColor:BackgroundColor.WHITE,
-						frameDesign:FrameDesign.SHINY_METAL)
-				//g = clock.backgroundImage.getGraphics()
-				g = clock.foregroundImage.createGraphics()
-				icon = swingBuilder.imageIcon('/griffon-icon-48x48.png').image
+						frameDesign:FrameDesign.SHINY_METAL
+				)
+/*
+				g = clock.backgroundImage.getGraphics()
+				//g = clock.foregroundImage.createGraphics()
+				
+				//icon =swingBuilder.imageIcon('/griffon-icon-48x48.png').image
+				icon = ImageIO.read(new File('griffon-icon-48x48.png'))
 				g.drawImage(icon, 0,0, null)
 				g.drawString("Sine Wave", 0, 0); // Draw some text
 				g.dispose()
+*/
+
+
 
 				compass (id:'compass',preferredSize: [300,300])
 				compass.setValueAnimated 90
 
 				clock.CLOCK_TIMER.addActionListener([
 					actionPerformed: { source -> 
-						println "clock == ${clock.hour}:${clock.minute} <${java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)}:${clock.minute}>"
+						//println "clock == ${clock.hour}:${clock.minute} <${java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)}:${clock.minute}>"
 					}
 				] as ActionListener)
 			}
