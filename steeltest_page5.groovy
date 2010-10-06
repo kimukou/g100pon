@@ -7,6 +7,7 @@ import java.awt.*
 import java.awt.event.*
 import javax.imageio.ImageIO
 import java.awt.geom.*;
+import javax.swing.BoxLayout
 
 class steeltest_page5{
 
@@ -15,24 +16,49 @@ class steeltest_page5{
 			registerFactory("migLayout", new LayoutFactory(MigLayout))
 			migLayout(layoutConstraints: "gap 0,insets 0,fill")
 /*
-        linearBargraphGauge: LinearBargraph ,
-        linearBargraphLcdGauge: LinearBargraphLcd,
+        linearBargraph: LinearBargraph ,
+        linearBargraphLcd: LinearBargraphLcd,
         led: Led,
 */
-			registerBeanFactory("linearBargraphGauge", LinearBargraph)
-			registerBeanFactory("linearBargraphLcdGauge", LinearBargraphLcd)
+			registerBeanFactory("linearBargraph", LinearBargraph)
+			registerBeanFactory("linearBargraphLcd", LinearBargraphLcd)
 			registerBeanFactory("led", Led)
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
-				linearBargraphGauge(preferredSize: [300,150],value:50,
+				linearBargraph(preferredSize: [200,200],value:50,
 					barGraphColor:ColorDef.CYAN
 				)
-				linearBargraphLcdGauge(preferredSize: [150,300],value:50,
+				linearBargraphLcd(preferredSize: [200,200],value:50,
 					barGraphColor:ColorDef.MAGENTA,
-					orientation:javax.swing.SwingConstants.VERTICAL
+					orientation:javax.swing.SwingConstants.HORIZONTAL
 				)
-				led()
+				panel(){
+					boxLayout(axis:BoxLayout.Y_AXIS)
+					led(preferredSize: [50,50],
+						ledColor:LedColor.RED_LED,
+						ledOn:true
+					)
+					led(preferredSize: [50,50],
+						ledColor:LedColor.GREEN_LED,
+						ledOn:false
+					)
+					led(preferredSize: [50,50],
+						ledColor:LedColor.BLUE_LED,
+						ledBlinking:true
+					)
+					led(preferredSize: [50,50],
+						ledColor:LedColor.YELLOW_LED,
+						ledBlinking:true,
+						ledOn:false
+					)
+					led(preferredSize: [50,50],
+						ledColor:LedColor.ORANGE_LED,
+						ledBlinking:false,
+						ledOn:true
+					)
+				}
+				 
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
