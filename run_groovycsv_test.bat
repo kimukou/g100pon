@@ -1,3 +1,4 @@
+cd /d %0\..
 set JAVA_HOME=C:\opt\jdk
 
 ::set JAVA_OPTS=-Dgroovy.source.encoding=UTF-8 -Dfile.encoding=UTF-8
