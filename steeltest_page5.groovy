@@ -9,6 +9,9 @@ import javax.imageio.ImageIO
 import java.awt.geom.*;
 import javax.swing.BoxLayout
 
+//optional Clock.jar nessesary
+import eu.hansolo.clock.*
+
 class steeltest_page5{
 
 	steeltest_page5(swingBuilder,_title){
@@ -23,6 +26,8 @@ class steeltest_page5{
 			registerBeanFactory("linearBargraph", LinearBargraph)
 			registerBeanFactory("linearBargraphLcd", LinearBargraphLcd)
 			registerBeanFactory("led", Led)
+
+			registerBeanFactory("analogClock", AnalogClock)
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
@@ -58,7 +63,14 @@ class steeltest_page5{
 						ledOn:true
 					)
 				}
-				 
+				
+				//using Clock.jar
+				analogClock(preferredSize: [200,200],
+					//luminosity:Luminosity.LIGHT,
+					luminosity:Luminosity.DARK,
+					autoLuminosity:false,	//Need apoint luminosity
+					secondPointerVisible:true
+				)
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
