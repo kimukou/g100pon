@@ -15,13 +15,12 @@ import org.w3c.dom.*
 XmlDbRpcUrl='xmldb:exist://localhost:8080/exist/xmlrpc/db'
 XmlDbUid='admin'
 XmlDbPwd='admin'
-BASE_XML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Projections projectionId=\"%s\" projectionName=\"%s\"></Projections>"
+BASE_XML="<?xml version=\"1.0\" encoding=\"UTF-8\"?><Projections projectionId=\"%s\" projectionName=\"%s\"></Projections>"
 
 
 _targetCol=''
 
-//------------------------------------------------------------------------------//argument
-// default nowtime
+//argument(default nowtime)
 calendar = new GregorianCalendar()
 date = calendar.getTime()
 
@@ -58,13 +57,13 @@ IntRange.metaClass.define {
     }
 }
 
-//------------------------------------------------------------------------------//DB set
+//DB set
 database = Class.forName('org.exist.xmldb.DatabaseImpl').newInstance()
 assert database != null
 DatabaseManager.registerDatabase(database)
 
 
-//------------------------------------------------------------------------------//date str create
+//date str create
 fmTm = new SimpleDateFormat("yyyy-MM-dd")
 fmTm2 = new SimpleDateFormat("HH:mm:ss")
 fmTm3 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
@@ -82,13 +81,16 @@ _loop_max.times{
 	target_mm = new SimpleDateFormat("mm").format(date)
 
 
-//------------------------------------------------------------------------
 //collection get
 
-	strCol = new StringBuilder().append(_targetCol).append("/").append(target_yymm).append("/").append(target_dd).append("/").append(target_hh).append("/").append(target_mm).toString()
+	strCol = new StringBuilder()
+					.append(_targetCol).append("/").append(target_yymm).append("/")
+					.append(target_dd).append("/").append(target_hh).append("/")
+					.append(target_mm).toString()
 	println "(0)strCol=${strCol}"
 	//out << "(0)strCol=${strCol}" << "\n"
-	col = DatabaseManager.getCollection(XmlDbRpcUrl + "/" + strCol, XmlDbUid, XmlDbPwd)
+	col = DatabaseManager.getCollection(
+					XmlDbRpcUrl + "/" + strCol, XmlDbUid, XmlDbPwd)
 
 
 	if(null == col){

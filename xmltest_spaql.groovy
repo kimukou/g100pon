@@ -14,7 +14,6 @@ XmlDbUid='admin'
 XmlDbPwd='admin'
 
 
-//---------------------------------------------------------------------
 calendar = new GregorianCalendar()
 _targetProjectionId=''
 _range=120
@@ -37,8 +36,7 @@ args.each{
 assert len >= 2
 
 
-//------------------------------------------------------------------------------
-//DB conncetion sett
+//DB conncetion set
 database = Class.forName('org.exist.xmldb.DatabaseImpl').newInstance()
 assert database != null
 DatabaseManager.registerDatabase(database)
@@ -68,7 +66,7 @@ target_hh = new SimpleDateFormat("HH").format(date)
 target_mm = new SimpleDateFormat("mm").format(date)
 
 
-//------------------------------------------------------------------------------//collection set
+//collection set
 targetURI = XmlDbRpcUrl + _targetCol
 col = DatabaseManager.getCollection(targetURI, XmlDbUid, XmlDbPwd)
 service = (XQueryService) col.getService("XQueryService","1.0")

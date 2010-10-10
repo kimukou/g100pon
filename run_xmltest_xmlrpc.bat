@@ -16,4 +16,4 @@ set STORE_LABEL=hoge
 %JAVA_HOME%/bin/java -cp %CLASSPATH% groovy.ui.GroovyMain xmltest_xmlrpc.groovy %PARENT_ID% %STORE_ID% %STORE_LABEL%
 ::%JAVA_HOME%/bin/java -cp %CLASSPATH% groovy.ui.GroovyMain xmltest_xmlrpc.groovy %PARENT_ID% %STORE_ID% %STORE_LABEL% %MIN%
 ::%JAVA_HOME%/bin/java -cp %CLASSPATH% groovy.ui.GroovyMain xmltest_xmlrpc.groovy %PARENT_ID% %STORE_ID% %STORE_LABEL% %MIN% %ST_TIME%
-::pause
+pause
