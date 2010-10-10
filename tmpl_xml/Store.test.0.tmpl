@@ -1,0 +1,28 @@
+<xu:modifications version="1.0" xmlns:xu="http://www.xmldb.org/xupdate">
+<xu:append select="//Projections[@projectionId='${_targetProjectionId}']" child="last()">
+<Projection>
+	<date>${date_str}</date>
+	<time>${time_str}</time>
+	<dayofweek>${day_of_week}</dayofweek>
+<%
+	idarr = idstr.tokenize(',')
+	valarr = valstr.tokenize(',')
+	labelarr=labelstr.tokenize(',')
+	cnt = 0
+	idarr.each{id->
+		out <<  "<Store id=\"${id}\" name=\"${id}\" label=\"${labelarr[cnt]}\">" 
+		out << '\n'
+		valarr.each{val->
+			out <<	"<value datatype=\"double\" name=\"m_data\" timestamp=\"${tm_stamp}\">${valarr[cnt]}</value>" 
+			out << '\n'
+		}
+		out << '\n'
+		out <<  "</Store>" 
+		out << '\n'
+		cnt++
+	}
+%>
+</Projection>     
+</xu:append>
+</xu:modifications>
+

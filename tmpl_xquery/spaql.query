@@ -1,0 +1,5 @@
+for \$dir in collection("/db/${_targetCol}/${target_yymm}/${target_dd}/${target_hh}") 
+for \$objs in \$dir/Projections[@projectionId&='${_targetProjectionId}']/Projection/Store[@id='${_storeId}'] 
+where ("${tm_stamp}" <= \$objs/value/@timestamp)  
+order by \$objs/value/@timestamp[0][0] 
+return <result>{\$objs/value[@name='m_data']}</result>
