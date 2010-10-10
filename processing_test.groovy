@@ -51,11 +51,11 @@ public class e2DProcessing extends PApplet {
 }
 
 
-//Å°direct viewing
+//‚ñ†direct viewing
 //PApplet.main([ "e2DProcessing" ] as String[]);
 
 
-//Å°griffon like view
+//‚ñ†griffon like view
 import groovy.swing.SwingBuilder
 import javax.swing.WindowConstants as WC
 
