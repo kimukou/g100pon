@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>kimukou.g100pon</groupId>
-  <artifactId>processing</artifactId>
+  <artifactId>core</artifactId>
   <version>1.2.1</version>
   <versioning>
     <versions>
