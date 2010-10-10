@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>kimukou.g100pon</groupId>
-  <artifactId>processing</artifactId>
+  <artifactId>core</artifactId>
   <version>1.2.1</version>
   <dependencies>
 <!--
