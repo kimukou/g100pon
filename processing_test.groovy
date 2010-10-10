@@ -1,4 +1,10 @@
+// g100pon #88 grocessing (groovy+processing.org)
+
+
 //@Grab(group='geronimo', module='geronimo-installer-processing', version='1.1.1')
+//@GrabResolver(name="kimukou.g100pon", root="http://github.com/kimukou/g100pon/raw/master/libprocess")
+//@GrabConfig(systemClassLoader=true) // for workaround a permgen problem with GroovyServ
+//@Grab("processing:core:1.2.1")
 
 import processing.core.*
 

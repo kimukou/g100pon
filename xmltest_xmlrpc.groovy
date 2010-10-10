@@ -1,3 +1,6 @@
+// g100pon #52 XMLDB(exist‚ªˆê”ÔŠÈ’P‚©‚ÈH)‚Ì‘€ì
+//   ’~Ï•Ò
+
 import java.text.*
 import java.util.*
 
