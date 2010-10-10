@@ -68,7 +68,7 @@ target_hh = new SimpleDateFormat("HH").format(date)
 target_mm = new SimpleDateFormat("mm").format(date)
 
 
-//------------------------------------------------------------------------------//コレクション取得
+//------------------------------------------------------------------------------//collection set
 targetURI = XmlDbRpcUrl + _targetCol
 col = DatabaseManager.getCollection(targetURI, XmlDbUid, XmlDbPwd)
 service = (XQueryService) col.getService("XQueryService","1.0")
@@ -78,7 +78,7 @@ service.setProperty(OutputKeys.INDENT, "no")
 service.setProperty(OutputKeys.ENCODING, "UTF-8")
 
 
-//■プロパティファイルの読み込み
+//properties load
 java.util.Properties props = new Properties()
 props.load(new FileInputStream("tmpl_xml/${_targetProjectionId}.properties"))
 def config = new ConfigSlurper().parse(props) 
@@ -87,7 +87,7 @@ def config = new ConfigSlurper().parse(props)
 def f = new File("tmpl_xquery/spaql.query".toString())
 def engine = new groovy.text.GStringTemplateEngine()
 
-//データ出力
+//data output
 file = new File( 'spaql_result.txt' )
 
 config.keySet().each{key->
