@@ -155,9 +155,8 @@ _loop_max.times{
 		def isrc = new InputSource(new StringReader(baseString))
 		isrc.setEncoding("UTF-8")  
     	Document doc = parser.parse(isrc)
-		document.setContentAsDOM(doc)
+			document.setContentAsDOM(doc)
     	col.storeResource(document) 
-
 	}
 
 
@@ -171,8 +170,6 @@ _loop_max.times{
 	idarr=[]
 	valarr=[]
 	labelarr=[]
-
-
 	//storedata set
 	config.keySet().each{key->
 			labelarr.add key
@@ -213,7 +210,6 @@ _loop_max.times{
 	// XUpdate
 	updateservice = col.getService("XUpdateQueryService", "1.0")
 	updateservice.update(xupdate)
-
 	updateservice=null
 	col.close()
 

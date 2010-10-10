@@ -89,10 +89,10 @@ def engine = new groovy.text.GStringTemplateEngine()
 file = new File( 'spaql_result.txt' )
 
 config.keySet().each{key->
-	_beanid = config[key]
-	if(_beanid.contains(':')){
-		arr = _beanid.tokenize(':')
-		_beanid = arr[0]
+	_storeId = config[key]
+	if(_storeId.contains(':')){
+		arr = _storeId.tokenize(':')
+		_storeId = arr[0]
 	}
 
 	def binding = [	
@@ -100,7 +100,7 @@ config.keySet().each{key->
 					'target_dd':target_dd,
 					'tm_stamp':tm_stamp,
 					'_targetProjectionId':_targetProjectionId,
-					'_storeId':_beanid ,
+					'_storeId':_storeId ,
 					'_targetCol':_targetCol,
 					'target_hh':target_hh,
 					'target_mm':target_mm]
