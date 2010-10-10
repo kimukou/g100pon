@@ -44,7 +44,7 @@ assert database != null
 DatabaseManager.registerDatabase(database)
 
 
-//“ú•t•¶Žš—ñ
+//date str create
 calendar.add(Calendar.SECOND, -1 * _range)
 date = calendar.getTime()
 println date
@@ -68,7 +68,7 @@ target_hh = new SimpleDateFormat("HH").format(date)
 target_mm = new SimpleDateFormat("mm").format(date)
 
 
-//------------------------------------------------------------------------------//ƒRƒŒƒNƒVƒ‡ƒ“Žæ“¾
+//------------------------------------------------------------------------------//ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³å–å¾—
 targetURI = XmlDbRpcUrl + _targetCol
 col = DatabaseManager.getCollection(targetURI, XmlDbUid, XmlDbPwd)
 service = (XQueryService) col.getService("XQueryService","1.0")
@@ -78,7 +78,7 @@ service.setProperty(OutputKeys.INDENT, "no")
 service.setProperty(OutputKeys.ENCODING, "UTF-8")
 
 
-//¡ƒvƒƒpƒeƒBƒtƒ@ƒCƒ‹‚Ì“Ç‚Ýž‚Ý
+//â– ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
 java.util.Properties props = new Properties()
 props.load(new FileInputStream("tmpl_xml/${_targetProjectionId}.properties"))
 def config = new ConfigSlurper().parse(props) 
@@ -87,7 +87,7 @@ def config = new ConfigSlurper().parse(props)
 def f = new File("tmpl_xquery/spaql.query".toString())
 def engine = new groovy.text.GStringTemplateEngine()
 
-//ƒf[ƒ^o—Í
+//ãƒ‡ãƒ¼ã‚¿å‡ºåŠ›
 file = new File( 'spaql_result.txt' )
 
 config.keySet().each{key->

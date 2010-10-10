@@ -65,7 +65,6 @@ DatabaseManager.registerDatabase(database)
 
 
 //------------------------------------------------------------------------------//date str create
-//fmTm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
 fmTm = new SimpleDateFormat("yyyy-MM-dd")
 fmTm2 = new SimpleDateFormat("HH:mm:ss")
 fmTm3 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
@@ -139,7 +138,7 @@ _loop_max.times{
 		root.close()
 	}
 
-	//projectionId‚Ì“o˜^
+	//projectionId add
 	res = col.getResource(_targetProjectionId)
 	if (res == null){
 			document = col.createResource(_targetProjectionId, "XMLResource")
