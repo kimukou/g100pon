@@ -1,5 +1,5 @@
-// g100pon #52 XMLDB operation
-//   store part
+// g100pon #52 XMLDB(existが一番簡単かな？)の操作
+//   蓄積編
 
 import java.text.*
 import java.util.*
@@ -21,34 +21,15 @@ XmlDbPwd='admin'
 BASE_XML="<?xml version=\"1.0\" encoding=\"UTF-8\"?><Projections projectionId=\"%s\" projectionName=\"%s\"></Projections>"
 
 
-_targetParent=''
 
 //argument(default nowtime)
 calendar = new GregorianCalendar()
 date = calendar.getTime()
 
-
-_targetProjectionId=''
-_targetProjectionName=''
-
-int _loop_max=1
-int len = 0
-args.each{
-	switch(len){
-		case 0:_targetParent=it;break
-		case 1:_targetProjectionId=it;break
-		case 2:_targetProjectionName=it;break
-		case 3:_loop_max=it.toInteger();break
-		case 4:
-			parser =  new SimpleDateFormat("yyyy/MM/dd HH:mm")
-			date = parser.parse(it)
-			calendar.setTime(date)
-			break
-	}
-	len++
-}
-assert len >= 3
-
+_targetParent='test01'
+_targetProjectionId='Store.test.0'
+_targetProjectionName='hoge'
+_loop_max=1
 
 IntRange.metaClass.define {
     //random data cleate
@@ -85,13 +66,17 @@ _loop_max.times{
 
 
 //collection get
+
 	strCol = new StringBuilder()
 					.append(_targetParent).append("/").append(target_yymm).append("/")
 					.append(target_dd).append("/").append(target_hh).append("/")
 					.append(target_mm).toString()
 	println "(0)strCol=${strCol}"
+	//out << "(0)strCol=${strCol}" << "\n"
+	col = DatabaseManager.getCollection(
+					XmlDbRpcUrl + "/" + strCol, XmlDbUid, XmlDbPwd)
 
-	col = DatabaseManager.getCollection(XmlDbRpcUrl + "/" + strCol, XmlDbUid, XmlDbPwd)
+
 	if(null == col){
 		root = DatabaseManager.getCollection(XmlDbRpcUrl, XmlDbUid, XmlDbPwd)
 		mgtService = (CollectionManagementService)root.getService("CollectionManagementService", "1.0")
@@ -145,10 +130,6 @@ _loop_max.times{
 		document = col.createResource(_targetProjectionId, "XMLResource")
 		baseString = String.format(BASE_XML,_targetProjectionId, _targetProjectionName)
 
-		println "-----------------------------"
-		println "baseString=${baseString}"
-		println "-----------------------------"
-
 		def dbfactory = DocumentBuilderFactory.newInstance()
 		def parser = dbfactory.newDocumentBuilder()
 		def isrc = new InputSource(new StringReader(baseString))
@@ -159,10 +140,11 @@ _loop_max.times{
 	}
 
 
-	//propties file load
-	def props = new Properties()
-	props.load(new FileInputStream("tmpl_xml/${_targetProjectionId}.properties"))
-	def config = new ConfigSlurper().parse(props) 
+	def config =[
+		hote:'temp.store.data.0'
+		//,hoge:'temp.store.data.0.2'
+		//,fuga;'temp.store.data.1:2'
+	]
 
 
 	idarr=[]
@@ -191,21 +173,39 @@ _loop_max.times{
 	labelstr=labelarr.join(',').toString()
 
 
-	//GSringTemplate
-	def f = new File("tmpl_xml/${_targetProjectionId}.tmpl".toString())
-	def engine = new groovy.text.GStringTemplateEngine()
-	def binding = [	date_str: date_str,
-					time_str:time_str,
-					day_of_week:day_of_week,
-					_targetProjectionId:_targetProjectionId,
-					labelstr:labelstr,
-					tm_stamp:tm_stamp,
-					idstr:idstr,
-					valstr:valstr ]
-	def template = engine.createTemplate(f).make(binding)
-	xupdate = template.toString()
+	xupdate="""
+<xu:modifications version="1.0" xmlns:xu="http://www.xmldb.org/xupdate">
+<xu:append select="//Projections[@projectionId='${_targetProjectionId}']" child="last()">
+<Projection>
+	<date>${date_str}</date>
+	<time>${time_str}</time>
+	<dayofweek>${day_of_week}</dayofweek>
+"""
+	idarr = idstr.tokenize(',')
+	valarr = valstr.tokenize(',')
+	labelarr=labelstr.tokenize(',')
+	cnt = 0
+	idarr.each{id->
+		xupdate+="<Store id=\"${id}\" name=\"${id}\" label=\"${labelarr[cnt]}\">" 
+		xupdate+='\n'
+		valarr.each{val->
+			xupdate+="<value datatype=\"double\" name=\"m_data\" timestamp=\"${tm_stamp}\">${valarr[cnt]}</value>" 
+			xupdate+='\n'
+		}
+		xupdate+='\n'
+		xupdate+="</Store>" 
+		xupdate+='\n'
+		cnt++
+	}
+
+xupdate+="""
+</Projection>     
+</xu:append>
+</xu:modifications>
+"""
 
 	println "xupdate=${xupdate}"
+
 
 	// XUpdate
 	updateservice = col.getService("XUpdateQueryService", "1.0")

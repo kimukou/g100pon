@@ -67,7 +67,7 @@ import javax.swing.WindowConstants as WC
 
 def swingBuilder = new SwingBuilder()
 swingBuilder.edt {
-  frame(title:'steeltestFull', 
+  frame(title:'processing_test', 
 			size: [300,300],
 			//pack: true,
   			location: [50,50],

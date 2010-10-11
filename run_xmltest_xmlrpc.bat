@@ -1,5 +1,8 @@
 set JAVA_HOME=C:\opt\jdk
+
 set EXIST_LIB=D:\Tooldev\eXist-1.2.6\WEB-INF\lib
+::set EXIST_LIB=./libxml
+
 set CLASSPATH=".;./lib/*;%EXIST_LIB%/*"
 
 set MIN=60

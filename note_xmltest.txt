@@ -2,37 +2,40 @@ need exists 1.2.6.war on Server(tomcat or jetty)
 	http://exist.sourceforge.net/download.html
 	3.2. Previous Stable Release
 
-exist/WEB-INF/lib equals libxml into jar version
+exist/WEB-INF/lib equals ./libxml into jar version
+
+(client program using exist/WEB-INF/lib copy to ./libxml)
 
 --------------------------------
-A)server serring(exsample windows)
+A)server serring(example windows,using jetty)
 
-1) cd /opt
-2) unzip jetty
+ 1) cd /opt
+ 2) unzip jetty
+    
+ 3)cd JETTY_HOME
+	remove JETTY_HOME/contexts into file exclude javadoc.xml
+	remove JETTY_HOME/webapps
 
-3)cd JETTY_HOME
-		remove JETTY_HOME/contexts into file exclude javadoc.xml
-		remove JETTY_HOME/webapps
+ 4)tmpl_xmldbset copy(http://github.com/kimukou/g100pon/tree/master/tmpl_xmldbset/ )
+	exist.xml		JETTY_HOME/contexts
+	start.bat		JETTY_HOME
 
-4)tmpl_xmldbset
-		exist.xml		JETTY_HOME/contexts copy
-		start.bat		JETTY_HOME
+ 5)exist.war download and unzip
+	ie)
+		win: D:\Tooldev\eXist-1.2.6
+		mac: /usr/share/eXist-1.2.6
 
-5)exist.war download and unzip
-		ie)
-			win: D:\Tooldev\eXist-1.2.6
-			mac: /usr/share/eXist-1.2.6
+	location differents edit
+		JETTY_HOME/contexts/exist.xml
+			resourceBase
 
-		location differents edit
-			JETTY_HOME/contexts/exist.xml
-				resourceBase
-6)run jetty server
-		start.sh or start.bat
+ 6)run jetty server
+	start.sh or start.bat
 
 ----------------------------------------
 B)xmlstore test
-		run_xmltest_xmlrpc.sh	or run_xmltest_xmlrpc.bat
+	run_xmltest_xmlrpc.sh	or run_xmltest_xmlrpc.bat
 
 C)xquery test
-		run_xmltest_spaql.sh	or run_xmltest_spaql.bat
+	run_xmltest_spaql.sh	or run_xmltest_spaql.bat
 
