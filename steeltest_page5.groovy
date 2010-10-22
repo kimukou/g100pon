@@ -12,6 +12,9 @@ import javax.swing.BoxLayout
 //optional Clock.jar nessesary
 import eu.hansolo.clock.*
 
+//optional SignalTower.jar nessesary
+import eu.hansolo.signaltower.*
+
 class steeltest_page5{
 
 	steeltest_page5(swingBuilder,_title){
@@ -30,6 +33,8 @@ class steeltest_page5{
 			registerBeanFactory("analogClock", AnalogClock)
 			registerBeanFactory("backgroundPanel", nixieclock.BackgroundPanel)
 			registerBeanFactory("nixieNumberScalable", nixieclock.NixieNumberScalable)
+
+			registerBeanFactory("design42", Design42)
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
@@ -111,6 +116,15 @@ class steeltest_page5{
 						)
 					}
 				}
+				design42(preferredSize: [100,200],
+									redOn:true
+				)
+				design42(preferredSize: [100,200],
+									yellowOn:true
+				)
+				design42(preferredSize: [100,200],
+									greenOn:true
+				)
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
@@ -138,7 +152,16 @@ class steeltest_page5{
 						frameDesign:FrameDesign.SHINY_METAL,
 						backgroundColorFromTheme:false
 				)
-				
+
+				registerBeanFactory("radialBargraph1Lcd", RadialBargraph1Lcd)
+				radialBargraph1Lcd(preferredSize: [300,300],
+					barGraphColor:ColorDef.ORANGE,
+					value:50,
+					customLayerVisible:true,
+					customLayer:ImageIO.read(new File('griffon-icon-48x48.png')),
+					pointerType:eu.hansolo.steelseries.tools.PointerType.TYPE2
+				)
+
 				rect = clock.getBounds2D()
 				println "rect=${rect}"
 				clock.setCustomBackground( new TexturePaint( ImageIO.read(new File('griffon-icon-48x48.png')), rect));

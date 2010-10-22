@@ -4,4 +4,4 @@ set JAVA_HOME=C:\opt\jdk
 
 %JAVA_HOME%/bin/java %JAVA_OPTS% -cp ".;./lib/*" groovy.ui.GroovyMain steeltest_full.groovy
 
-::pause
+pause
