@@ -110,7 +110,7 @@ class steeltest_page1{
 				displayMulti(preferredSize: [140,40],value:30,
 					customLcdUnitFont :new Font("ＭＳ ゴシック",Font.PLAIN,20),			//Font Change(to Verdana)
 					useCustomLcdUnitFont :true,											//Font Change(to Verdana)
-					unitString:'秒'
+					lcdUnitString:'秒'
 				)
 				displayRectangular(preferredSize: [140,80],minimumSize: [140,80],value:50,
 					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),	//Font Change(to Verdana)
@@ -121,7 +121,7 @@ class steeltest_page1{
 				displaySingle(preferredSize: [140,40],value:70,
 					customLcdUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),			//Font Change(to Verdana)
 					useCustomLcdUnitFont:true,											//Font Change(to Verdana)
-					unitString:'秒'
+					lcdUnitString:'秒'
 				) 
 			}
 
