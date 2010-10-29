@@ -9,11 +9,6 @@ import javax.imageio.ImageIO
 import java.awt.geom.*;
 import javax.swing.BoxLayout
 
-//optional Clock.jar nessesary
-import eu.hansolo.clock.*
-
-//optional SignalTower.jar nessesary
-import eu.hansolo.signaltower.*
 
 class steeltest_page5{
 
@@ -29,12 +24,6 @@ class steeltest_page5{
 			registerBeanFactory("linearBargraph", LinearBargraph)
 			registerBeanFactory("linearBargraphLcd", LinearBargraphLcd)
 			registerBeanFactory("led", Led)
-
-			registerBeanFactory("analogClock", AnalogClock)
-			registerBeanFactory("backgroundPanel", nixieclock.BackgroundPanel)
-			registerBeanFactory("nixieNumberScalable", nixieclock.NixieNumberScalable)
-
-			registerBeanFactory("design42", Design42)
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
@@ -70,61 +59,6 @@ class steeltest_page5{
 						ledOn:true
 					)
 				}
-				
-				//using Clock.jar
-				panel(){
-					boxLayout(axis:BoxLayout.Y_AXIS)
-					analogClock(preferredSize: [200,200],
-						//luminosity:Luminosity.LIGHT,
-						luminosity:Luminosity.DARK,
-						autoLuminosity:false,	//Need apoint luminosity
-						secondPointerVisible:true
-					)
-
-					//using NixieClock.jar
-					backgroundPanel(preferredSize: [300,100]){
-						boxLayout()
-						nixieNumberScalable(
-							preferredSize: [43, 73],//must need
-							name:"hourLeft",
-							number:1
-						)
-						nixieNumberScalable(
-							preferredSize: [43, 73],
-							name:"hourRight",
-							number:6
-						)
-						nixieNumberScalable(
-							preferredSize: [43, 73],
-							name:"minLeft",
-							number:4
-						)
-						nixieNumberScalable(
-							preferredSize: [43, 73],
-							name:"minRight",
-							number:8
-						)
-						nixieNumberScalable(
-							preferredSize: [43, 73],
-							name:"secLeft",
-							number:5
-						)
-						nixieNumberScalable(
-							preferredSize: [43, 73],
-							name:"secRight",
-							number:0
-						)
-					}
-				}
-				design42(preferredSize: [100,200],
-									redOn:true
-				)
-				design42(preferredSize: [100,200],
-									yellowOn:true
-				)
-				design42(preferredSize: [100,200],
-									greenOn:true
-				)
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){

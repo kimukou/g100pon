@@ -25,6 +25,7 @@ swingBuilder.edt {
 			ReloadUtil.getClass('steeltest_page3.groovy').newInstance(swingBuilder,"page3")
 			ReloadUtil.getClass('steeltest_page4.groovy').newInstance(swingBuilder,"page4")
 			ReloadUtil.getClass('steeltest_page5.groovy').newInstance(swingBuilder,"page5")
+			ReloadUtil.getClass('steeltest_fun_comp.groovy').newInstance(swingBuilder,"fun_comp")
 		}
   }
 }
