@@ -16,6 +16,10 @@ import eu.hansolo.signaltower.*
 //optional MButton.jar nessesary
 import eu.hansolo.custom.mbutton.*
 
+//optional SteelCheckBox.jar nessesary
+import eu.hansolo.custom.*
+import eu.hansolo.tools.*
+
 class steeltest_fun_comp{
 
 	steeltest_fun_comp(swingBuilder,_title){
@@ -31,8 +35,9 @@ class steeltest_fun_comp{
 			registerBeanFactory("backgroundPanel", nixieclock.BackgroundPanel)
 			registerBeanFactory("nixieNumberScalable", nixieclock.NixieNumberScalable)
 			registerBeanFactory("design42", Design42)
-
 			registerBeanFactory("mButton", MButton)
+			registerBeanFactory("steelCheckBox", SteelCheckBox)
+
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
@@ -125,6 +130,35 @@ class steeltest_fun_comp{
 						,alpha:0.0f
 						,effectColor:Color.CYAN 
 						,effectColorPressed:Color.CYAN 
+					)
+				}
+
+				//using SteelCheckBox.jar
+				panel(){
+					boxLayout(axis:BoxLayout.Y_AXIS)
+					steelCheckBox(
+						text:"standard",
+						preferredSize: [100,20]
+						//ui
+					)
+					steelCheckBox(
+						text:"green",
+						preferredSize: [100,20],
+						colored:true,
+						rised:true,
+						selectedColor:eu.hansolo.tools.ColorDef.GREEN
+					)
+					steelCheckBox(
+						text:"red",
+						preferredSize: [100,20],
+						colored:true,
+						rised:true,
+						selectedColor:eu.hansolo.tools.ColorDef.RED
+					)
+					steelCheckBox(
+						text:"disable",
+						preferredSize: [100,20],
+						enabled :false
 					)
 				}
 			}
