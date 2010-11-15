@@ -1,11 +1,12 @@
-groovy script testeria
+kimukou_26 groovy script test aria
 ==========
+
 # reference 
 ## Twitter `#g100pon`
 
 * [anaounce pdf](http://www.jggug.org/Home/ibento-shiryoushuu/g100pon.pdf)
 * [master google doc](https://spreadsheets.google.com/ccc?key=0Au1YHLJ4YZmbdEtGeUgxRTRxVGJpbHFXUGVFRndieVE&hl=ja&authkey=CLjYzYoF#gid=0)
-
+* [togeter JGGUG training camp 2010](http://togetter.com/li/58838)
 
 1. [steeltest_full.groovy](g100pon/raw/master/steeltest_full.groovy)
 ------
