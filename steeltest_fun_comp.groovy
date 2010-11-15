@@ -20,6 +20,9 @@ import eu.hansolo.custom.mbutton.*
 import eu.hansolo.custom.*
 import eu.hansolo.tools.*
 
+//optional RollingCounter.jar nessesary
+import eu.hansolo.custom.*
+
 class steeltest_fun_comp{
 
 	steeltest_fun_comp(swingBuilder,_title){
@@ -37,6 +40,8 @@ class steeltest_fun_comp{
 			registerBeanFactory("design42", Design42)
 			registerBeanFactory("mButton", MButton)
 			registerBeanFactory("steelCheckBox", SteelCheckBox)
+			registerBeanFactory("counter", Counter)
+
 
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
@@ -161,6 +166,11 @@ class steeltest_fun_comp{
 						enabled :false
 					)
 				}
+
+
+				//using RollingCounter.jar
+				
+				
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
