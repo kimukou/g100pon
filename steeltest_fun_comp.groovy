@@ -40,7 +40,7 @@ class steeltest_fun_comp{
 			registerBeanFactory("design42", Design42)
 			registerBeanFactory("mButton", MButton)
 			registerBeanFactory("steelCheckBox", SteelCheckBox)
-			registerBeanFactory("counter", Counter)
+			registerBeanFactory("Counter", Counter)
 
 
 
@@ -169,7 +169,33 @@ class steeltest_fun_comp{
 
 
 				//using RollingCounter.jar
-				
+		    //BRIGHT,
+		    //DARK,
+		    //CUSTOM
+				panel(){
+					boxLayout(axis:BoxLayout.X_AXIS)
+					Counter(
+						id:"counter1",
+						preferredSize: [20,100],
+						theme:Theme.BRIGHT,
+						maxValue:3,
+						switchTime:10,
+						offsetIncrement:2,
+						offsetDecrement:3
+					)
+					counter1.increment()
+					Counter(
+						id:"counter2",
+						preferredSize: [20,100],
+						theme:Theme.DARK
+					)
+					counter2.decrement()
+					Counter(
+						preferredSize: [20,100],
+						theme:Theme.CUSTOM,
+						backgroundColor:new java.awt.Color(107, 105, 99, 255)
+					)
+				}
 				
 			}
 
