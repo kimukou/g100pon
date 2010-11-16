@@ -37,10 +37,10 @@ class steeltest_fun_comp{
 			registerBeanFactory("analogClock", AnalogClock)
 			registerBeanFactory("backgroundPanel", nixieclock.BackgroundPanel)
 			registerBeanFactory("nixieNumberScalable", nixieclock.NixieNumberScalable)
-			registerBeanFactory("design42", Design42)
-			registerBeanFactory("mButton", MButton)
+			registerBeanFactory("signalTower", Design42)
+			registerBeanFactory("mbutton", MButton)
 			registerBeanFactory("steelCheckBox", SteelCheckBox)
-			registerBeanFactory("Counter", Counter)
+			registerBeanFactory("rollingCounter", Counter)
 
 
 
@@ -93,44 +93,44 @@ class steeltest_fun_comp{
 				}
 
 				//using SignalTower.jar
-				design42(preferredSize: [100,200],
+				signalTower(preferredSize: [100,200],
 							redOn:true
 				)
-				design42(preferredSize: [100,200],
+				signalTower(preferredSize: [100,200],
 							yellowOn:true
 				)
-				design42(preferredSize: [100,200],
+				signalTower(preferredSize: [100,200],
 							greenOn:true
 				)
 
 				//using MButton.jar
 				panel(){
 					boxLayout(axis:BoxLayout.Y_AXIS)
-					mButton(text:"homepage"
+					mbutton(text:"homepage"
 						,preferredSize: [100,20]
 						,alpha:0.0f
 						,effectColor:Color.RED
 						,effectColorPressed:Color.RED
 					)
-					mButton(text:"about me"
+					mbutton(text:"about me"
 						,preferredSize: [100,20]
 						,alpha:0.0f
 						,effectColor:Color.BLUE
 						,effectColorPressed:Color.BLUE
 					)
-					mButton(text:"services"
+					mbutton(text:"services"
 						,preferredSize: [100,20]
 						,alpha:0.0f
 						,effectColor:Color.GREEN
 						,effectColorPressed:Color.GREEN
 					)
-					mButton(text:"portfolio"
+					mbutton(text:"portfolio"
 						,preferredSize: [100,20]
 						,alpha:0.0f
 						,effectColor:Color.ORANGE 
 						,effectColorPressed:Color.ORANGE 
 					)
-					mButton(text:"contact"
+					mbutton(text:"contact"
 						,preferredSize: [100,20]
 						,alpha:0.0f
 						,effectColor:Color.CYAN 
@@ -174,8 +174,8 @@ class steeltest_fun_comp{
 		    //CUSTOM
 				panel(){
 					boxLayout(axis:BoxLayout.X_AXIS)
-					Counter(
-						id:"counter1",
+					rollingCounter(
+						id:"rollingCounter1",
 						preferredSize: [20,100],
 						theme:Theme.BRIGHT,
 						maxValue:3,
@@ -183,14 +183,15 @@ class steeltest_fun_comp{
 						offsetIncrement:2,
 						offsetDecrement:3
 					)
-					counter1.increment()
-					Counter(
-						id:"counter2",
+					rollingCounter1.increment()
+					rollingCounter(
+						id:"rollingCounter2",
 						preferredSize: [20,100],
 						theme:Theme.DARK
 					)
-					counter2.decrement()
-					Counter(
+					rollingCounter2.decrement()
+					rollingCounter(
+						id:"rollingCounter3",
 						preferredSize: [20,100],
 						theme:Theme.CUSTOM,
 						backgroundColor:new java.awt.Color(107, 105, 99, 255)
