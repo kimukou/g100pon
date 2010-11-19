@@ -23,6 +23,9 @@ import eu.hansolo.tools.*
 //optional RollingCounter.jar nessesary
 import eu.hansolo.custom.*
 
+//optional ContourGradientPaint.jar nessesary
+import eu.hansolo.ContourGradientPaint
+
 class steeltest_fun_comp{
 
 	steeltest_fun_comp(swingBuilder,_title){
@@ -202,6 +205,21 @@ class steeltest_fun_comp{
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
 				boxLayout()
+				panel(){
+					boxLayout(axis:BoxLayout.X_AXIS)
+					def box = new Rectangle2D.Double(0, 0, 500, 250);
+					def cgp =  new ContourGradientPaint(
+						box.getBounds(), 
+						[0.0f, 1.0f] as float[],
+						[Color.RED, Color.YELLOW] as Color[] 
+					)
+/*
+					def g = getGraphics()
+					Graphics2D g2 = (Graphics2D) g
+					g2.setPaint(cgp)
+					g2.fill(box)
+*/
+				}
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
