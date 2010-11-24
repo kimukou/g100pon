@@ -207,13 +207,29 @@ class steeltest_fun_comp{
 				boxLayout()
 				panel(){
 					boxLayout(axis:BoxLayout.X_AXIS)
+/*
+					this.registerBeanFactory("closurePanel", ClosurePanel)
+					closurePanel(closure:{g->
+						def box = new Rectangle2D.Double(0, 0, 500, 250);
+						def cgp =  new ContourGradientPaint(
+							box.getBounds(), 
+							[0.0f, 1.0f] as float[],
+							[Color.RED, Color.YELLOW] as Color[] 
+						)
+						Graphics2D g2 = (Graphics2D) g
+						g2.setPaint(cgp)
+						g2.fill(box)
+					})
+*/
+					//widget(new DrawPanel()) 
+/*
 					def box = new Rectangle2D.Double(0, 0, 500, 250);
 					def cgp =  new ContourGradientPaint(
 						box.getBounds(), 
 						[0.0f, 1.0f] as float[],
 						[Color.RED, Color.YELLOW] as Color[] 
 					)
-/*
+
 					def g = getGraphics()
 					Graphics2D g2 = (Graphics2D) g
 					g2.setPaint(cgp)
@@ -228,6 +244,32 @@ class steeltest_fun_comp{
 
 		}
 	}
-
 }
 
+class ClosurePanel extends javax.swing.JPanel {
+   Closure closure
+	 @Override 
+   void paint(java.awt.Graphics g) {
+     //super(g);
+     closure.call(g,this);
+   }
+}
+
+/*
+class DrawPanel extends JPanel {
+	@Override 
+	def paint(g:Graphics){
+			def box = new Rectangle2D.Double(0, 0, 500, 250);
+			def cgp =  new ContourGradientPaint(
+				box.getBounds(), 
+				[0.0f, 1.0f] as float[],
+				[Color.RED, Color.YELLOW] as Color[] 
+			)
+
+			def g = getGraphics()
+			Graphics2D g2 = (Graphics2D) g
+			g2.setPaint(cgp)
+			g2.fill(box)
+	}
+}
+*/
