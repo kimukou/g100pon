@@ -1,0 +1,21 @@
+// vm = VMFactory.connectLocal(pid)
+//
+//println vm.dump()
+//vm.dumpAllThreads()
+
+
+vm.breakpoint("youdebug_test",2) {
+	println "[youdebug_test]it=${it}"
+	//println thread?.frame(1)?.args[0]
+  //thread.dumpThread() // short for 'delegate.dumpThread()', which is the same as 'vm.currentThread.dumpThread()'
+  println "s="+s
+}
+
+vm.breakpoint("main",2) {
+	println "[main]it=${it}"
+  println "s="+s;
+}
+
+//vm.methodEntryBreakpoint("Main","foo") {
+//  println thread.frame(1).args[0];
+//}

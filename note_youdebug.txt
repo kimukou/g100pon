@@ -1,0 +1,9 @@
+refarence 
+	http://d.hatena.ne.jp/kkawa/20091108/p1
+	http://d.hatena.ne.jp/masanobuimai/20091109#1257769475
+
+	guide:
+		http://youdebug.kenai.com/user-guide.html
+
+	src:
+		http://kenai.com/projects/youdebug

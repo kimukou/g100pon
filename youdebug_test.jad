@@ -1,0 +1,318 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   youdebug_test.groovy
+
+import groovy.lang.*;
+import java.io.File;
+import java.lang.ref.SoftReference;
+import org.codehaus.groovy.reflection.ClassInfo;
+import org.codehaus.groovy.runtime.GStringImpl;
+import org.codehaus.groovy.runtime.ScriptBytecodeAdapter;
+import org.codehaus.groovy.runtime.callsite.CallSite;
+import org.codehaus.groovy.runtime.callsite.CallSiteArray;
+import org.codehaus.groovy.runtime.typehandling.DefaultTypeTransformation;
+
+public class youdebug_test extends Script
+{
+
+    public youdebug_test()
+    {
+        CallSite acallsite[] = $getCallSiteArray();
+    }
+
+    public youdebug_test(Binding context)
+    {
+        CallSite acallsite[] = $getCallSiteArray();
+        ScriptBytecodeAdapter.invokeMethodOnSuperN($get$$class$groovy$lang$Script(), this, "setBinding", new Object[] {
+            context
+        });
+    }
+
+    public static transient void main(String args[])
+    {
+        CallSite acallsite[] = $getCallSiteArray();
+        acallsite[0].call($get$$class$org$codehaus$groovy$runtime$InvokerHelper(), $get$$class$youdebug_test(), args);
+    }
+
+    public Object run()
+    {
+        Object obj;
+        CallSite acallsite[] = $getCallSiteArray();
+        acallsite[1].callCurrent(this, new GStringImpl(new Object[] {
+            acallsite[2].callGetProperty(acallsite[3].callGroovyObjectGetProperty(this))
+        }, new String[] {
+            "class=", ""
+        }));
+        String s = "ABCDEFG";
+        acallsite[4].callCurrent(this, acallsite[5].call(s, $const$0));
+        obj = acallsite[6].call(s, "HIJKLMN");
+        Object _tmp = obj;
+        s = (String)ScriptBytecodeAdapter.castToType(obj, $get$$class$java$lang$String());
+        return acallsite[7].callCurrent(this, s);
+    }
+
+    public Object this$dist$invoke$4(String name, Object args)
+    {
+        CallSite acallsite[] = $getCallSiteArray();
+        int ai[];
+        return ScriptBytecodeAdapter.invokeMethodOnCurrentN($get$$class$youdebug_test(), this, (String)ScriptBytecodeAdapter.castToType(new GStringImpl(new Object[] {
+            name
+        }, new String[] {
+            "", ""
+        }), $get$$class$java$lang$String()), ScriptBytecodeAdapter.despreadList(new Object[0], new Object[] {
+            args
+        }, ai = (new int[] {
+            DefaultTypeTransformation.intUnbox(ScriptBytecodeAdapter.castToType(Integer.valueOf(0), Integer.TYPE))
+        })));
+    }
+
+    public void this$dist$set$4(String name, Object value)
+    {
+        CallSite acallsite[] = $getCallSiteArray();
+        ScriptBytecodeAdapter.setGroovyObjectField(value, $get$$class$youdebug_test(), this, (String)ScriptBytecodeAdapter.castToType(new GStringImpl(new Object[] {
+            name
+        }, new String[] {
+            "", ""
+        }), $get$$class$java$lang$String()));
+        Object _tmp = value;
+    }
+
+    public Object this$dist$get$4(String name)
+    {
+        CallSite acallsite[] = $getCallSiteArray();
+        return ScriptBytecodeAdapter.getGroovyObjectField($get$$class$youdebug_test(), this, (String)ScriptBytecodeAdapter.castToType(new GStringImpl(new Object[] {
+            name
+        }, new String[] {
+            "", ""
+        }), $get$$class$java$lang$String()));
+    }
+
+    protected MetaClass $getStaticMetaClass()
+    {
+        if(getClass() == $get$$class$youdebug_test())
+            return ScriptBytecodeAdapter.initMetaClass(this);
+        ClassInfo classinfo = $staticClassInfo;
+        if(classinfo == null)
+            $staticClassInfo = classinfo = ClassInfo.getClassInfo(getClass());
+        return classinfo.getMetaClass();
+    }
+
+    public Object super$3$getProperty(String s)
+    {
+        return super.getProperty(s);
+    }
+
+    public String super$1$toString()
+    {
+        return super.toString();
+    }
+
+    public void super$3$setProperty(String s, Object obj)
+    {
+        super.setProperty(s, obj);
+    }
+
+    public void super$1$notify()
+    {
+        super.notify();
+    }
+
+    public void super$3$println()
+    {
+        super.println();
+    }
+
+    public void super$1$notifyAll()
+    {
+        super.notifyAll();
+    }
+
+    public void super$3$print(Object obj)
+    {
+        super.print(obj);
+    }
+
+    public void super$3$printf(String s, Object aobj[])
+    {
+        super.printf(s, aobj);
+    }
+
+    public Object super$1$clone()
+    {
+        return super.clone();
+    }
+
+    public Object super$3$evaluate(String s)
+    {
+        return super.evaluate(s);
+    }
+
+    public void super$1$wait()
+    {
+        super.wait();
+    }
+
+    public MetaClass super$2$getMetaClass()
+    {
+        return super.getMetaClass();
+    }
+
+    public void super$1$wait(long l, int i)
+    {
+        super.wait(l, i);
+    }
+
+    public void super$2$setMetaClass(MetaClass metaclass)
+    {
+        super.setMetaClass(metaclass);
+    }
+
+    public Class super$1$getClass()
+    {
+        return super.getClass();
+    }
+
+    public Binding super$3$getBinding()
+    {
+        return super.getBinding();
+    }
+
+    public void super$1$finalize()
+    {
+        super.finalize();
+    }
+
+    public void super$3$printf(String s, Object obj)
+    {
+        super.printf(s, obj);
+    }
+
+    public void super$3$setBinding(Binding binding)
+    {
+        super.setBinding(binding);
+    }
+
+    public void super$1$wait(long l)
+    {
+        super.wait(l);
+    }
+
+    public void super$3$run(File file, String as[])
+    {
+        super.run(file, as);
+    }
+
+    public Object super$3$evaluate(File file)
+    {
+        return super.evaluate(file);
+    }
+
+    public void super$3$println(Object obj)
+    {
+        super.println(obj);
+    }
+
+    public boolean super$1$equals(Object obj)
+    {
+        return super.equals(obj);
+    }
+
+    public Object super$3$invokeMethod(String s, Object obj)
+    {
+        return super.invokeMethod(s, obj);
+    }
+
+    public int super$1$hashCode()
+    {
+        return super.hashCode();
+    }
+
+    private static void $createCallSiteArray_1(String as[])
+    {
+        as[0] = "runScript";
+        as[1] = "println";
+        as[2] = "name";
+        as[3] = "class";
+        as[4] = "println";
+        as[5] = "substring";
+        as[6] = "plus";
+        as[7] = "println";
+    }
+
+    private static CallSiteArray $createCallSiteArray()
+    {
+        String as[] = new String[8];
+        $createCallSiteArray_1(as);
+        return new CallSiteArray($get$$class$youdebug_test(), as);
+    }
+
+    private static CallSite[] $getCallSiteArray()
+    {
+        CallSiteArray callsitearray;
+        if($callSiteArray == null || (callsitearray = (CallSiteArray)$callSiteArray.get()) == null)
+        {
+            callsitearray = $createCallSiteArray();
+            $callSiteArray = new SoftReference(callsitearray);
+        }
+        return callsitearray.array;
+    }
+
+    private static Class $get$$class$groovy$lang$Script()
+    {
+        return $class$groovy$lang$Script == null && ($class$groovy$lang$Script = _mthclass$("groovy.lang.Script")) == null ? $class$groovy$lang$Script : $class$groovy$lang$Script;
+    }
+
+    private static Class $get$$class$youdebug_test()
+    {
+        return $class$youdebug_test == null && ($class$youdebug_test = _mthclass$("youdebug_test")) == null ? $class$youdebug_test : $class$youdebug_test;
+    }
+
+    private static Class $get$$class$org$codehaus$groovy$runtime$InvokerHelper()
+    {
+        return $class$org$codehaus$groovy$runtime$InvokerHelper == null && ($class$org$codehaus$groovy$runtime$InvokerHelper = _mthclass$("org.codehaus.groovy.runtime.InvokerHelper")) == null ? $class$org$codehaus$groovy$runtime$InvokerHelper : $class$org$codehaus$groovy$runtime$InvokerHelper;
+    }
+
+    private static Class $get$$class$java$lang$String()
+    {
+        return $class$java$lang$String == null && ($class$java$lang$String = _mthclass$("java.lang.String")) == null ? $class$java$lang$String : $class$java$lang$String;
+    }
+
+    static Class _mthclass$(String s)
+    {
+        try
+        {
+            return Class.forName(s);
+        }
+        catch(ClassNotFoundException classnotfoundexception)
+        {
+            throw new NoClassDefFoundError(classnotfoundexception.getMessage());
+        }
+    }
+
+    private static final Integer $const$0; /* synthetic field */
+    private static ClassInfo $staticClassInfo; /* synthetic field */
+    public static Long __timeStamp; /* synthetic field */
+    public static Long __timeStamp__239_neverHappen1290602040405; /* synthetic field */
+    private static SoftReference $callSiteArray; /* synthetic field */
+    private static Class $class$groovy$lang$Script; /* synthetic field */
+    private static Class $class$youdebug_test; /* synthetic field */
+    private static Class $class$org$codehaus$groovy$runtime$InvokerHelper; /* synthetic field */
+    private static Class $class$java$lang$String; /* synthetic field */
+
+    static 
+    {
+        Long long1;
+        Long long2;
+        Integer integer;
+        long1 = Long.valueOf(0L);
+        Long _tmp = long1;
+        __timeStamp__239_neverHappen1290602040405 = (Long)long1;
+        long2 = Long.valueOf(0x12c7de04c55L);
+        Long _tmp1 = long2;
+        __timeStamp = (Long)long2;
+        integer = Integer.valueOf(5);
+        Integer _tmp2 = integer;
+        $const$0 = (Integer)integer;
+    }
+}
