@@ -1,20 +1,24 @@
+vm.breakpoint("youdebug_test",2) {
+		println "YDB: $message"     // hello.groovy line 1 define message value
+    message = "Goodbye, world?" // message edit
+    println "YDB: Modified!"
+}
+
 // vm = VMFactory.connectLocal(pid)
 //
 //println vm.dump()
 //vm.dumpAllThreads()
 
 
-vm.breakpoint("youdebug_test",2) {
-	println "[youdebug_test]it=${it}"
+//vm.breakpoint("youdebug_test",3) {  //not found ! Exception
+vm.breakpoint("youdebug_test",5) {
+	println "YDB: [youdebug_test]it=${it}"
 	//println thread?.frame(1)?.args[0]
   //thread.dumpThread() // short for 'delegate.dumpThread()', which is the same as 'vm.currentThread.dumpThread()'
-  println "s="+s
+  println "YDB: s= $s" //OK
+  //println "YDB: s= "+s //NG
 }
 
-vm.breakpoint("main",2) {
-	println "[main]it=${it}"
-  println "s="+s;
-}
 
 //vm.methodEntryBreakpoint("Main","foo") {
 //  println thread.frame(1).args[0];
