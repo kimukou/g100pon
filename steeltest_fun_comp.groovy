@@ -5,7 +5,7 @@ import java.awt.*
 import java.awt.event.*
 import javax.imageio.ImageIO
 import java.awt.geom.*;
-import javax.swing.BoxLayout
+import javax.swing.*
 
 //optional Clock.jar nessesary
 import eu.hansolo.clock.*
@@ -25,6 +25,7 @@ import eu.hansolo.custom.*
 
 //optional ContourGradientPaint.jar nessesary
 import eu.hansolo.ContourGradientPaint
+
 
 class steeltest_fun_comp{
 
@@ -203,73 +204,47 @@ class steeltest_fun_comp{
 				
 			}
 
-			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
-				boxLayout()
-				panel(){
-					boxLayout(axis:BoxLayout.X_AXIS)
-/*
-					this.registerBeanFactory("closurePanel", ClosurePanel)
-					closurePanel(closure:{g->
-						def box = new Rectangle2D.Double(0, 0, 500, 250);
-						def cgp =  new ContourGradientPaint(
-							box.getBounds(), 
-							[0.0f, 1.0f] as float[],
-							[Color.RED, Color.YELLOW] as Color[] 
-						)
-						Graphics2D g2 = (Graphics2D) g
-						g2.setPaint(cgp)
-						g2.fill(box)
-					})
-*/
-					//widget(new DrawPanel()) 
-/*
-					def box = new Rectangle2D.Double(0, 0, 500, 250);
-					def cgp =  new ContourGradientPaint(
-						box.getBounds(), 
-						[0.0f, 1.0f] as float[],
-						[Color.RED, Color.YELLOW] as Color[] 
-					)
-
-					def g = getGraphics()
-					Graphics2D g2 = (Graphics2D) g
-					g2.setPaint(cgp)
-					g2.fill(box)
-*/
-				}
+			registerBeanFactory("testPanel", TestPanel)
+			panel(){
+				boxLayout(axis:BoxLayout.X_AXIS)
+				testPanel(preferredSize: [500,100])
 			}
-
-			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
-				boxLayout()
-			}
-
 		}
 	}
 }
 
-class ClosurePanel extends javax.swing.JPanel {
-   Closure closure
-	 @Override 
-   void paint(java.awt.Graphics g) {
-     //super(g);
-     closure.call(g,this);
-   }
-}
+
+class TestPanel extends JPanel {
+	//Rectangle r = new Rectangle(500,250)
+
+	@Override
+  public void paintComponent(Graphics g) {
+			def r=getBounds()
+    	g.setColor(Color.black)
+    	g.fillRect(0, 0, (Integer) r.width, (Integer) r.height)
+
+			Graphics2D g2 = (Graphics2D)g
+
+			Rectangle2D box = new Rectangle2D.Double(0, 0, 500, 250)
+			float[] fractions = [ 0.0f, 1.0f ]
+			Color[] colors = [ Color.RED, Color.YELLOW ]
+			ContourGradientPaint cgp = new ContourGradientPaint(box.getBounds(), fractions, colors)
+			g2.setPaint(cgp)
+println g2.getPaint().dump()
+			g2.fill(box)
+println g2.dump()
 
 /*
-class DrawPanel extends JPanel {
-	@Override 
-	def paint(g:Graphics){
 			def box = new Rectangle2D.Double(0, 0, 500, 250);
 			def cgp =  new ContourGradientPaint(
 				box.getBounds(), 
 				[0.0f, 1.0f] as float[],
 				[Color.RED, Color.YELLOW] as Color[] 
 			)
-
-			def g = getGraphics()
-			Graphics2D g2 = (Graphics2D) g
 			g2.setPaint(cgp)
 			g2.fill(box)
-	}
-}
 */
+  }
+}
+
+
