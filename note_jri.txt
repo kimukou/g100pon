@@ -1,9 +1,0 @@
-nessesary R 
-	R:
-		http://cran.r-project.org/
-	rJava:
-		http://www.rforge.net/rJava/files/
-
-Reference setting
-	http://d.hatena.ne.jp/hamadakoichi/20100103/1262511121
-	http://d.hatena.ne.jp/hamadakoichi/20100111/1263227076
