@@ -22,8 +22,7 @@ version 2.2
   SteelSeries upgrade memo(1.4=>2.2) 
     1)eu.hansolo.steelseries.extras(SteelExtras.jar) moving component of One Part
       altimeter is 2.2 can use,but 2.1 not.
-    2)Poi argument is float=>double
-    3)Change of name of property 
+    2)Change of name of property 
     useTitleAndUnitFont=> usingTitleAndUnitFont
     useCustomTickmarkLabels=>usingCustomTickmarkLabels
     backgroundColorFromTheme=>customBackgroundVisible,backgroundVisible 
