@@ -69,13 +69,13 @@ class steeltest_page1{
 				boxLayout()
 				digitalRadialGauge (preferredSize: [300,300],value:50,
 					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
-					usingTitleAndUnitFont:true,										//Font Change(to Verdana)
+					useTitleAndUnitFont:true,										//Font Change(to Verdana)
 					unitString:'秒'
 				)
 				digitalRadialLcdGauge (id:'lcdgauge',minValue:0,maxValue:100,lcdValue:50,value:80,
 					valueColor:Color.RED,
 					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
-					usingTitleAndUnitFont:true,										//Font Change(to Verdana)
+					useTitleAndUnitFont:true,										//Font Change(to Verdana)
 					title:'ほげほげ',
 					unitString:'ふがふが',
 					lcdUnitString:'まいう',
@@ -83,7 +83,7 @@ class steeltest_page1{
 /*
 				displayCircular(id:'circular',minValue:0,maxValue:100,lcdValue:50,
 					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),			//Font Change(to Verdana)
-					usingTitleAndUnitFont:true,											//Font Change(to Verdana)
+					useTitleAndUnitFont:true,											//Font Change(to Verdana)
 					title:'ほげほげ',unitString:'ふがふが',lcdUnitString:'まいう',
 					preferredSize: [300,300])
 */
@@ -117,7 +117,7 @@ class steeltest_page1{
 				)
 				displayRectangular(preferredSize: [140,80],minimumSize: [140,80],value:50,
 					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),	//Font Change(to Verdana)
-					usingTitleAndUnitFont:true,									//Font Change(to Verdana)
+					useTitleAndUnitFont:true,									//Font Change(to Verdana)
 					lcdUnitString:'sec'
 					//lcdUnitString:'秒'
 				) 

@@ -3,8 +3,6 @@ import net.miginfocom.swing.MigLayout
 
 import eu.hansolo.steelseries.tools.*
 import eu.hansolo.steelseries.gauges.*
-import eu.hansolo.steelseries.extras.* //since 2.1
-
 import java.awt.*
 import java.awt.event.*
 
@@ -31,7 +29,7 @@ class steeltest_page3{
 				radial2LcdGauge(preferredSize: [300,300],
 					unitString:'SEC',
 					customBackground:java.awt.Color.MAGENTA,
-					customBackgroundVisible:true	//★ NEED!!
+					backgroundColorFromTheme:false //★ NEED!!
 				) 
 
 				radial2TopGauge(preferredSize: [300,300],value:20,
@@ -63,7 +61,7 @@ class steeltest_page3{
 					pointerColor:PointerColor.BLUE,
 					backgroundColor:BackgroundColor.BEIGE,
 					tickmarkColor:java.awt.Color.RED,
-					usingTickmarkColorFromTheme:false,			//★ NEED!!
+					tickmarkColorFromTheme:false,			//★ NEED!!
 					trackStartColor:java.awt.Color.LIGHT_GRAY,
 					trackStopColor:java.awt.Color.MAGENTA,
 					trackSectionColor:java.awt.Color.PINK
@@ -74,7 +72,7 @@ class steeltest_page3{
 					ledColor:LedColor.YELLOW_LED,
 					pointerColor:PointerColor.WHITE,
 					labelColor:java.awt.Color.GREEN,
-					usingLabelColorFromTheme:false				//★ NEED!!
+					labelColorFromTheme:false				//★ NEED!!
 				) 
 */
 
@@ -83,10 +81,10 @@ class steeltest_page3{
 					id:'radial4LcdGauge',
 					preferredSize: [300,300],
 					frameDesign:FrameDesign.BLACK_METAL,
-					customBackgroundVisible:true,	//★ NEED!!
-					usingLabelColorFromTheme:false,				//★ NEED!!
+					backgroundColorFromTheme:false,
+					labelColorFromTheme:false,				//★ NEED!!
 					labelColor:java.awt.Color.BLACK,
-					usingTickmarkColorFromTheme:false,			//★ NEED!!
+					tickmarkColorFromTheme:false,			//★ NEED!!
 					tickmarkColor:java.awt.Color.BLACK
 				) 
 				radial4LcdGauge.setCustomBackground(

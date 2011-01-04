@@ -3,7 +3,6 @@ import net.miginfocom.swing.MigLayout
 
 import eu.hansolo.steelseries.tools.*
 import eu.hansolo.steelseries.gauges.*
-import eu.hansolo.steelseries.extras.* //since 2.1
 import java.awt.*
 import java.awt.event.*
 import javax.imageio.ImageIO
@@ -70,22 +69,22 @@ class steeltest_page5{
 				clock(id:'clock',preferredSize: [200,200],
 						backgroundColor:BackgroundColor.WHITE,
 						frameDesign:FrameDesign.SHINY_METAL,
-					customBackgroundVisible:true	//Åö NEED!!
+						backgroundColorFromTheme:false
 				)
 				clock(id:'clock2',preferredSize: [200,200],
 						backgroundColor:BackgroundColor.WHITE,
 						frameDesign:FrameDesign.SHINY_METAL,
-					customBackgroundVisible:true	//Åö NEED!!
+						backgroundColorFromTheme:false
 				)
 				clock(id:'clock3',preferredSize: [200,200],
 						backgroundColor:BackgroundColor.WHITE,
 						frameDesign:FrameDesign.SHINY_METAL,
-						customBackgroundVisible:true	//Åö NEED!!
+						backgroundColorFromTheme:false
 				)
 				clock(id:'clock4',preferredSize: [200,200],
 						backgroundColor:BackgroundColor.WHITE,
 						frameDesign:FrameDesign.SHINY_METAL,
-						customBackgroundVisible:true	//Åö NEED!!
+						backgroundColorFromTheme:false
 				)
 
 				registerBeanFactory("radialBargraph1Lcd", RadialBargraph1Lcd)

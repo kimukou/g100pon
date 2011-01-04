@@ -3,8 +3,6 @@ import net.miginfocom.swing.MigLayout
 
 import eu.hansolo.steelseries.tools.*
 import eu.hansolo.steelseries.gauges.*
-import eu.hansolo.steelseries.extras.* //since 2.1
-
 import java.awt.*
 import java.awt.event.*
 
@@ -46,7 +44,7 @@ class steeltest_page2{
 				level (preferredSize: [300,300],value:50)
 				linearGauge(id:'linear',preferredSize: [300,300],value:50,
 					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
-					usingTitleAndUnitFont:true,										//Font Change(to Verdana)
+					useTitleAndUnitFont:true,										//Font Change(to Verdana)
 					title:'はひふへほ～',
 					//title:'hahihuheho',
 					valueColor:ColorDef.GREEN
@@ -68,21 +66,12 @@ class steeltest_page2{
 				poi(id:'WUPPERTAL',name:'Wuppertal',lat:51.260783,lon:7.149982)
 */
 				//not better
-/*
 				def RAITH = new Poi('Raith',51.485605,7.479544)
 				def HOME = new Poi('Home',51.911784,7.633789)
 				def MUENSTER = new Poi('Munster',51.972502,7.62989)
 				def ESSEN = new Poi('Essen',51.462721,7.015057)
 				def BOCHUM = new Poi('Bochum',51.487526,7.211781)
 				def WUPPERTAL = new Poi('Wuppertal',51.260783,7.149982)
-*/
-/*
-				def RAITH = new Poi('Raith',51.0f,7.0f)
-				def HOME = new Poi('Home',51.0f,7.0f)
-				def MUENSTER = new Poi('Munster',51.0f,7.0f)
-				def ESSEN = new Poi('Essen',51.0f,7.0f)
-				def BOCHUM = new Poi('Bochum',51.0f,7.0f)
-				def WUPPERTAL = new Poi('Wuppertal',51.0f,7.0f)
 
 				radar(id:'radar',preferredSize: [300,300],
 							range:70000,
@@ -93,8 +82,6 @@ class steeltest_page2{
 				radar.add ESSEN
 				radar.add BOCHUM
 				radar.add WUPPERTAL
-*/
-				radar(id:'radar',preferredSize: [300,300])
 				radar.animate()
 
 				radial1Gauge(id:'radial1',preferredSize: [300,300],minValue:0,maxValue:10000,
@@ -120,19 +107,19 @@ class steeltest_page2{
 					minValue:0,
 					maxValue:100,
 					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
-					usingTitleAndUnitFont:true,										//Font Change(to Verdana)
+					useTitleAndUnitFont:true,										//Font Change(to Verdana)
 					title:'cpu メータ',
 					unitString:'パーセント',
 					tickmarkSectionsVisible:true,
 					tickmarkSections:[[10,20,Color.BLUE],[50,60,Color.GREEN]] as Section[],
 
 					//how to use ?
-					usingCustomTickmarkLabels:true,
+					useCustomTickmarkLabels:true,
 					customTickmarkLabels:[0, 10, 50, 100] as Double[]  
 				) 
 
 				radial1VerticalGauge(id:'radial1Vertical',preferredSize: [300,300],
-					customBackgroundVisible:true	//★ NEED!!
+					backgroundColorFromTheme:false	//★ NEED!!
 				) 
 				radial1Vertical.setCustomBackground(
 					new java.awt.LinearGradientPaint(
@@ -144,7 +131,7 @@ class steeltest_page2{
 				)
 
 				radial2Gauge(id:'radial2',preferredSize: [300,300],
-					customBackgroundVisible:true	//★ NEED!!
+					backgroundColorFromTheme:false	//★ NEED!!
 				) 
 				radial2.setCustomBackground(
 					new java.awt.RadialGradientPaint(
