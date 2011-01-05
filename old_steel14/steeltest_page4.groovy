@@ -3,8 +3,6 @@ import net.miginfocom.swing.MigLayout
 
 import eu.hansolo.steelseries.tools.*
 import eu.hansolo.steelseries.gauges.*
-import eu.hansolo.steelseries.extras.* //since 2.1
-
 import java.awt.*
 import java.awt.event.*
 
@@ -42,7 +40,7 @@ class steeltest_page4{
 					barGraphColor:ColorDef.RED,
 					value:50,
 					customBackground:java.awt.Color.MAGENTA,
-					customBackgroundVisible:true	//★ NEED!!
+					backgroundColorFromTheme:false //★ NEED!!
 				) 
 				radialBargraph1Lcd(preferredSize: [300,300],
 					barGraphColor:ColorDef.ORANGE,
@@ -75,7 +73,7 @@ class steeltest_page4{
 					frameDesign:FrameDesign.BLACK_METAL,
 					backgroundColor:BackgroundColor.BEIGE,
 					tickmarkColor:java.awt.Color.RED,
-					usingTickmarkColorFromTheme:false,			//★ NEED!!
+					tickmarkColorFromTheme:false,			//★ NEED!!
 					trackStartColor:java.awt.Color.LIGHT_GRAY,
 					trackSectionColor:java.awt.Color.PINK,
 					trackStopColor:java.awt.Color.MAGENTA
@@ -86,7 +84,7 @@ class steeltest_page4{
 					ledColor:LedColor.YELLOW_LED,
 					pointerColor:PointerColor.WHITE,
 					labelColor:java.awt.Color.GREEN,
-					usingLabelColorFromTheme:false				//★ NEED!!
+					labelColorFromTheme:false				//★ NEED!!
 				) 
 			}
 
@@ -98,7 +96,7 @@ class steeltest_page4{
 				)
 				radialBargraph4Lcd(preferredSize: [300,300],
 					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
-					usingTitleAndUnitFont:true,										//Font Change(to Verdana)
+					useTitleAndUnitFont:true,										//Font Change(to Verdana)
 					title:'ほげほげ',
 					unitString:'ふがふが',
 					lcdUnitString:'まいう',

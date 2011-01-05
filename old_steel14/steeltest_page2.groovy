@@ -1,10 +1,8 @@
 import groovy.swing.factory.LayoutFactory
 import net.miginfocom.swing.MigLayout
 
-import eu.hansolo.steelseries.extras.* //since 2.1
 import eu.hansolo.steelseries.tools.*
 import eu.hansolo.steelseries.gauges.*
-
 import java.awt.*
 import java.awt.event.*
 
@@ -46,28 +44,15 @@ class steeltest_page2{
 				level (preferredSize: [300,300],value:50)
 				linearGauge(id:'linear',preferredSize: [300,300],value:50,
 					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
-					usingTitleAndUnitFont:true,										//Font Change(to Verdana)
+					useTitleAndUnitFont:true,										//Font Change(to Verdana)
 					title:'はひふへほ～',
 					//title:'hahihuheho',
 					valueColor:ColorDef.GREEN
 				)
 				//println linear.dump()
-/*
 				linearLcdGauge(preferredSize: [300,300],value:50,
 					valueColor:ColorDef.ORANGE
 				) 
-*/
-				linearLcdGauge(
-					id: 'invGauge', 
-					backgroundColor: BackgroundColor.WHITE, 
-					frameDesign: FrameDesign.SHINY_METAL, 
-					valueColor: ColorDef.GREEN,
-          ledColor: LedColor.GREEN_LED, 
-					orientation: 0,
-          title: 'Daily Investment (mx 35k)',
-          maxValue: 350.0f,
-          value: 30.0f,
-          lcdUnitString: 'k')
 			}
 
 			swingBuilder.panel(constraints: "span,wrap, gapbottom 0,gaptop 0",border: emptyBorder(0)){
@@ -122,19 +107,19 @@ class steeltest_page2{
 					minValue:0,
 					maxValue:100,
 					titleAndUnitFont:new Font("ＭＳ ゴシック",Font.PLAIN,20),		//Font Change(to Verdana)
-					usingTitleAndUnitFont:true,										//Font Change(to Verdana)
+					useTitleAndUnitFont:true,										//Font Change(to Verdana)
 					title:'cpu メータ',
 					unitString:'パーセント',
 					tickmarkSectionsVisible:true,
 					tickmarkSections:[[10,20,Color.BLUE],[50,60,Color.GREEN]] as Section[],
 
 					//how to use ?
-					usingCustomTickmarkLabels:true,
+					useCustomTickmarkLabels:true,
 					customTickmarkLabels:[0, 10, 50, 100] as Double[]  
 				) 
 
 				radial1VerticalGauge(id:'radial1Vertical',preferredSize: [300,300],
-					customBackgroundVisible:true	//★ NEED!!
+					backgroundColorFromTheme:false	//★ NEED!!
 				) 
 				radial1Vertical.setCustomBackground(
 					new java.awt.LinearGradientPaint(
@@ -146,7 +131,7 @@ class steeltest_page2{
 				)
 
 				radial2Gauge(id:'radial2',preferredSize: [300,300],
-					customBackgroundVisible:true	//★ NEED!!
+					backgroundColorFromTheme:false	//★ NEED!!
 				) 
 				radial2.setCustomBackground(
 					new java.awt.RadialGradientPaint(
