@@ -11,8 +11,7 @@ kimukou_26 groovy script test aria
 1. [steeltest_full.groovy](g100pon/raw/master/steeltest_full.groovy)
 ------
 * [steeltest_page1.groovy](g100pon/raw/master/steeltest_page1.groovy)
-	* [capture_run_steeltest_full_page1.png](g100pon/raw/master/capture_run_steeltest_full_page1.png)
-	* <img src="https://github.com/kimukou/g100pon/raw/master/capture_run_steeltest_full_page1.png" width="400" height="200">
+	* <img src="https://github.com/kimukou/g100pon/raw/master/capture_run_steeltest_full_page1.png" width="400" height="300">
 * [steeltest_page2.groovy](g100pon/raw/master/steeltest_page2.groovy)
 	* [capture_run_steeltest_full_page2.png](g100pon/raw/master/capture_run_steeltest_full_page2.png)
 * [steeltest_page3.groovy](g100pon/raw/master/steeltest_page3.groovy)
