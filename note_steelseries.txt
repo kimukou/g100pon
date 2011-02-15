@@ -37,5 +37,16 @@ version 2.2
     labelColorFromTheme => usingLabelColorFromTheme
 
 
+version 3.5.3
+	http://kenai.com/projects/steelseries/sources/repo/show/SteelSeries/trunk/src/main/java/eu/hansolo/steelseries/gauges
+	http://kenai.com/projects/steelseries/sources/repo/show/SteelSeries/trunk/src/main/java/eu/hansolo/steelseries/tools
+
+
+	javadoc
+		http://idisk.mac.com/han.solo-Public/SteelSeries3/javadoc/index.html
+
+  SteelExtras(Clock parts)
+		http://kenai.com/projects/steelseries/sources/repo/show/SteelExtras/trunk/src/main/java/eu/hansolo/steelseries/extras
+
 reference
   http://harmoniccode.blogspot.com/
