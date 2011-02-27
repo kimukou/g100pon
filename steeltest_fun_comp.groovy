@@ -211,8 +211,21 @@ class steeltest_fun_comp{
 			registerBeanFactory("testPanel", TestPanel)
 			panel(){
 				boxLayout(axis:BoxLayout.X_AXIS)
-				testPanel(preferredSize: [500,100])
+/*
+				widget(new Canvas(), paint: {c, g ->  
+					def r=getBounds()
+					g.setColor(Color.black)
+					g.fillRect(0, 0, (Integer) r.width, (Integer) r.height)
 
+					Graphics2D g2 = (Graphics2D)g
+
+					Rectangle2D box = new Rectangle2D.Double(0, 0, 500, 250)
+					float[] fractions = [ 0.0f, 1.0f ]
+					Color[] colors = [ Color.RED, Color.YELLOW ]
+					ContourGradientPaint cgp = new ContourGradientPaint(box.getBounds(), fractions, colors)
+					g2.setPaint(cgp)
+				})
+*/
 				//using FridayFunV.jar
 				panel(){
 					boxLayout(axis:BoxLayout.X_AXIS)
@@ -228,7 +241,16 @@ class steeltest_fun_comp{
 		}
 	}
 }
-
+// refarence http://www.jroller.com/aalmiray/?cat=Groovy&date=200907
+import java.awt.Graphics  
+import javax.swing.JComponent  
+  
+class Canvas extends JComponent {  
+  Closure paint  
+  public void paintComponent(Graphics g) {  
+    if(paint) paint(this, g)  
+  }  
+}
 
 class TestPanel extends JPanel {
 	//Rectangle r = new Rectangle(500,250)
