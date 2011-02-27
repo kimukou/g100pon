@@ -98,19 +98,19 @@ class steeltest_page5{
 				)
 
 				rect = clock.getBounds2D()
-				println "rect=${rect}"
+				//println "rect=${rect}"
 				clock.setCustomBackground( new TexturePaint( ImageIO.read(new File('griffon-icon-48x48.png')), rect));
 
 				rect = new Rectangle2D.Double(0.0d, 0.0d, 48.0d, 48.0d);
-				println "rect=${rect}"
+				//println "rect=${rect}"
 				clock2.setCustomBackground( new TexturePaint( ImageIO.read(new File('griffon-icon-48x48.png')), rect));
 
 				rect = new Rectangle2D.Double(22.0d, 22.0d, 160.0d, 160.0d);
-				println "rect=${rect}"
+				//println "rect=${rect}"
 				clock3.setCustomBackground( new TexturePaint( ImageIO.read(new File('griffon-icon-48x48.png')), rect));
 
 				rect = new Rectangle2D.Double(50.0d, 50.0d, 98.0d, 98.0d);
-				println "rect=${rect}"
+				//println "rect=${rect}"
 				clock4.setCustomBackground( new TexturePaint( ImageIO.read(new File('griffon-icon-48x48.png')), rect));
 
 			}

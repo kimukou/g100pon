@@ -26,6 +26,9 @@ import eu.hansolo.custom.*
 //optional ContourGradientPaint.jar nessesary
 import eu.hansolo.ContourGradientPaint
 
+//optional FridayFunV.jar nessesary
+import eu.hansolo.ledpanel.*
+
 
 class steeltest_fun_comp{
 
@@ -45,6 +48,7 @@ class steeltest_fun_comp{
 			registerBeanFactory("mbutton", MButton)
 			registerBeanFactory("steelCheckBox", SteelCheckBox)
 			registerBeanFactory("rollingCounter", Counter)
+			registerBeanFactory("ledPanel", LedPanel)
 
 
 
@@ -202,12 +206,24 @@ class steeltest_fun_comp{
 					)
 				}
 				
-			}
 
+			}
 			registerBeanFactory("testPanel", TestPanel)
 			panel(){
 				boxLayout(axis:BoxLayout.X_AXIS)
 				testPanel(preferredSize: [500,100])
+
+				//using FridayFunV.jar
+				panel(){
+					boxLayout(axis:BoxLayout.X_AXIS)
+					ledPanel(
+						preferredSize: [300,300],
+						symbol:'libsteel/80.png',
+						name:'ledMatrixPanel1',
+						rasterStep:7	//5-10
+					)
+				}
+
 			}
 		}
 	}
@@ -230,9 +246,9 @@ class TestPanel extends JPanel {
 			Color[] colors = [ Color.RED, Color.YELLOW ]
 			ContourGradientPaint cgp = new ContourGradientPaint(box.getBounds(), fractions, colors)
 			g2.setPaint(cgp)
-println g2.getPaint().dump()
+//println g2.getPaint().dump()
 			g2.fill(box)
-println g2.dump()
+//println g2.dump()
 
 /*
 			def box = new Rectangle2D.Double(0, 0, 500, 250);
