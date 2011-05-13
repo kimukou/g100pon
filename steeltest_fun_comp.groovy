@@ -30,6 +30,10 @@ import eu.hansolo.ContourGradientPaint
 import eu.hansolo.ledpanel.*
 
 
+//optional Gradients.jar nessesary
+import eu.hansolo.gradients.*
+
+
 class steeltest_fun_comp{
 
 	steeltest_fun_comp(swingBuilder,_title){
@@ -208,81 +212,80 @@ class steeltest_fun_comp{
 				
 
 			}
-			registerBeanFactory("testPanel", TestPanel)
+
+
+
+			registerBeanFactory("canvasPanel", CanvasPanel)
 			panel(){
 				boxLayout(axis:BoxLayout.X_AXIS)
-/*
-				widget(new Canvas(), paint: {c, g ->  
-					def r=getBounds()
-					g.setColor(Color.black)
-					g.fillRect(0, 0, (Integer) r.width, (Integer) r.height)
-
-					Graphics2D g2 = (Graphics2D)g
-
-					Rectangle2D box = new Rectangle2D.Double(0, 0, 500, 250)
-					float[] fractions = [ 0.0f, 1.0f ]
-					Color[] colors = [ Color.RED, Color.YELLOW ]
-					ContourGradientPaint cgp = new ContourGradientPaint(box.getBounds(), fractions, colors)
-					g2.setPaint(cgp)
-				})
-*/
 				//using FridayFunV.jar
 				panel(){
 					boxLayout(axis:BoxLayout.X_AXIS)
 					ledPanel(
-						preferredSize: [300,300],
+						preferredSize: [64,64],
 						symbol:'libsteel/80.png',
 						name:'ledMatrixPanel1',
 						rasterStep:7	//5-10
 					)
-				}
-
+					canvasPanel(id:'canvas',preferredSize: [300,300])
+        }
 			}
+			canvas.drawContourGradient()
 		}
 	}
 }
-// refarence http://www.jroller.com/aalmiray/?cat=Groovy&date=200907
-import java.awt.Graphics  
-import javax.swing.JComponent  
-  
-class Canvas extends JComponent {  
-  Closure paint  
-  public void paintComponent(Graphics g) {  
-    if(paint) paint(this, g)  
-  }  
+
+
+
+//===========================================================
+interface PaintOperation {
+    void paint(Graphics g)
 }
 
-class TestPanel extends JPanel {
-	//Rectangle r = new Rectangle(500,250)
+class CanvasPanel extends JPanel {
+  private PaintOperation paintOperation
 
-	@Override
-  public void paintComponent(Graphics g) {
-			def r=getBounds()
-    	g.setColor(Color.black)
-    	g.fillRect(0, 0, (Integer) r.width, (Integer) r.height)
-
-			Graphics2D g2 = (Graphics2D)g
-
-			Rectangle2D box = new Rectangle2D.Double(0, 0, 500, 250)
-			float[] fractions = [ 0.0f, 1.0f ]
-			Color[] colors = [ Color.RED, Color.YELLOW ]
-			ContourGradientPaint cgp = new ContourGradientPaint(box.getBounds(), fractions, colors)
-			g2.setPaint(cgp)
-//println g2.getPaint().dump()
-			g2.fill(box)
-//println g2.dump()
-
-/*
-			def box = new Rectangle2D.Double(0, 0, 500, 250);
-			def cgp =  new ContourGradientPaint(
-				box.getBounds(), 
-				[0.0f, 1.0f] as float[],
-				[Color.RED, Color.YELLOW] as Color[] 
-			)
-			g2.setPaint(cgp)
-			g2.fill(box)
-*/
+  public void setPaintOperation(PaintOperation paintOperation) {
+     this.paintOperation = paintOperation
+     if(isVisible()) {
+        repaint()
+     }
   }
+
+  protected void paintComponent(Graphics g) {
+     if(paintOperation != null) {
+        Dimension size = getSize()
+        g.clearRect((int)0, (int)0, (int)size.width, (int)size.height)
+        Graphics2D g2 = (Graphics2D) g 
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                             RenderingHints.VALUE_ANTIALIAS_ON)
+        paintOperation.paint(g)
+     }else{
+        super.paintComponent(g)
+     }
+  }
+
+
+  void drawContourGradient() {
+				println "drawContourGradient"
+	      this.setPaintOperation(new PaintOperation() {
+	         public void paint(Graphics g) {
+							println "drawContourGradient"
+	            Graphics2D g2 = (Graphics2D) g 
+              Rectangle2D box = new Rectangle2D.Double(0, 0, 500, 250)
+              float[] fractions = [ 0.0f, 1.0f ]
+              Color[] colors = [ Color.RED, Color.YELLOW ]
+              ContourGradientPaint cgp =  
+                  new ContourGradientPaint(box.getBounds(), fractions, colors)
+
+              g2.setPaint(cgp)
+              g2.fill(box)
+	         }
+	      })
+	}
+
 }
+
+
 
 
