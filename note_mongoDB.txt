@@ -1,0 +1,11 @@
+MongoDB
+	http://keicode.com/db/mongodb-install.php
+	http://keicode.com/db/mongodb-basics.php
+
+	C:\data フォルダを作成する
+	C:\data\db フォルダを作成する
+	http://www.mongodb.org/display/DOCS/Downloads から MongoDB (zip) をダウンロードする
+	C:\data 以下に zip を展開する
+	この中に mongodb-win32-<バージョン番号> というフォルダが含まれる
+
+

@@ -20,20 +20,17 @@ swingBuilder.edt {
 	) 
 	{
 		tabbedPane(){
-/*
 			ReloadUtil.getClass('steeltest_page1.groovy').newInstance(swingBuilder,"page1")
 			ReloadUtil.getClass('steeltest_page2.groovy').newInstance(swingBuilder,"page2")
 			ReloadUtil.getClass('steeltest_page3.groovy').newInstance(swingBuilder,"page3")
 			ReloadUtil.getClass('steeltest_page4.groovy').newInstance(swingBuilder,"page4")
 			ReloadUtil.getClass('steeltest_page5.groovy').newInstance(swingBuilder,"page5")
-*/
-			ReloadUtil.getClass('steeltest_fun_comp.groovy').newInstance(swingBuilder,"fun_comp")
 		}
   }
 }
 
 
-//動的ファイル再読込クラス
+//Dynamic reloading class
 class ReloadUtil{
 	private static Map<String, Class> loadMap = new HashMap<String, Class>()
 	private static Map<String, Long> tmMap = new HashMap<String, Long>()
