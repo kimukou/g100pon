@@ -20,7 +20,11 @@ swingBuilder.edt {
 	) 
 	{
 		tabbedPane(){
-			ReloadUtil.getClass('harmoniccode_test_page1.groovy').newInstance(swingBuilder,"page1")
+			ReloadUtil.getClass('harmoniccode_test_page1.groovy').newInstance(swingBuilder,"0.1 ver")
+/*
+			ReloadUtil.getClass('harmoniccode_test_page2.groovy').newInstance(swingBuilder,"0.2 ver")
+			ReloadUtil.getClass('harmoniccode_test_other.groovy').newInstance(swingBuilder,"other")
+*/
 		}
   }
 }
